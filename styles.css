@@ -1,0 +1,93 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+/* Basic styles for container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styles for select container */
+.select-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Styles for select wrapper */
+.select-wrapper {
+  flex: 1 1 auto;
+  max-width: 200px;
+}
+
+/* Styles for select element */
+.select-large {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Styles for button */
+.btn-large {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Styles for top releases list */
+.top-releases {
+  margin-top: 20px;
+}
+
+/* Styles for release list */
+#releaseList {
+  list-style-type: none;
+}
+
+/* Styles for release list items */
+#releaseList li {
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+/* Styles for play button */
+#releaseList li button {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Hover effect for play button */
+#releaseList li button:hover {
+  background-color: #219653;
+}
