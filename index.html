@@ -13,7 +13,7 @@
       <div class="select-wrapper">
         <label for="year">Select Year:</label>
         <select id="year" class="select-large">
-          <!-- Populate with years from 2015 to 2015 -->
+          <!-- Populate with years from 1995 to 2015 -->
           <!-- Options will be added dynamically using JavaScript -->
         </select>
       </div>
@@ -41,83 +41,27 @@
       <ul id="releaseList"></ul>
     </div>
   </div>
-  <div class="dancing-monkey">
-    <img src="dancing-monkey.gif" alt="Dancing Monkey">
-  </div>
+
   <script>
     // Function to fetch top releases data from Spotify API for a specific year and month
     async function fetchTopReleases(year, month) {
-      const clientId = "67f1dfb000944599beb31f1d56922d23";
-      const clientSecret = "ad79e1c6cb664a53ad3f8fb6e9c17a7d";
-      const tokenUrl = 'https://accounts.spotify.com/api/token';
-      const playlists = {
-        '2015/01': '2KtGns2GFUd9NSK3jXljWl',
-        '2015/02': '60qlSnqSVNfoLRQEDfO5of',
-        '2015/03': '06bI3ZOMHRFDT4wUf9Q69T',
-        '2015/04': '0Dqad8NfbkYNfaWF161NNM',
-        '2015/05': '1FBmHfxq7y7X1PiA6j3L5z',
-        '2015/06': '5sNIdIvfUQDq75zzAUXkx0',
-        '2015/07': '3fxzT8LFleqwy4Zw5eh9jI',
-        '2015/08': '6FIsj9Qk3p35qITl53E2r9',
-        '2015/09': '2w7ZQ7tiWMjJUO6IliMcjZ',
-        '2015/10': '3SicnDKoXzDMZ8HJUVFuQt',
-        '2015/11': '1SRIoXyzqMKmxaAO4GmNIV',
-        '2015/12': '3Iev42KrJ2xkzptreh4Jvf',
-      };
-
-      const playlistId = playlists[`${year}/${month.toString().padStart(2, '0')}`];
-      const apiUrl = `https://api.spotify.com/v1/playlists/${playlistId}/tracks?market=US&fields=items(track(name,id))&limit=3&offset=0`;
-
-      try {
-        // Fetch access token
-        const tokenResponse = await fetch(tokenUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
-          },
-          body: 'grant_type=client_credentials',
-        });
-
-        const tokenData = await tokenResponse.json();
-        const accessToken = tokenData.access_token;
-
-        // Fetch top tracks
-        const response = await fetch(apiUrl, {
-          headers: {
-            'Authorization': 'Bearer ' + accessToken,
-          },
-        });
-
-        const data = await response.json();
-        return data.items.map(item => ({ name: item.track.name, id: item.track.id }));
-      } catch (error) {
-        console.error('Error fetching top releases:', error);
-        return [];
-      }
+      // Use Spotify API to fetch top releases data
     }
 
     // Function to fetch top releases data for the selected year and month
     async function showTopReleases() {
+      // Fetch selected year and month from dropdowns
       const selectedYear = document.getElementById("year").value;
       const selectedMonth = document.getElementById("month").value;
+      // Call function to fetch top releases data
       const topReleases = await fetchTopReleases(selectedYear, selectedMonth) || [];
-
+      // Display top releases on the webpage
       const releaseList = document.getElementById("releaseList");
       releaseList.innerHTML = ""; // Clear previous releases
-      
       if (topReleases.length > 0) {
         topReleases.forEach(release => {
           const listItem = document.createElement("li");
-          const trackName = release.name;
-          const trackId = release.id;
-          listItem.textContent = trackName;
-          const playButton = document.createElement("button");
-          playButton.textContent = "Play";
-          playButton.onclick = function() {
-            window.open(`https://open.spotify.com/track/${trackId}`, '_blank');
-          };
-          listItem.appendChild(playButton);
+          listItem.textContent = release;
           releaseList.appendChild(listItem);
         });
       } else {
@@ -130,7 +74,7 @@
     // Function to populate year dropdown with options
     function populateYearDropdown() {
       const yearDropdown = document.getElementById("year");
-      for (let year = 2015; year <= 2015; year++) { // Change range if needed
+      for (let year = 1995; year <= 2015; year++) {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
