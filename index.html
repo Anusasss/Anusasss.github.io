@@ -7,6 +7,11 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
+  <!-- Spinning raccoon GIF -->
+  <div class="spinning-raccoon">
+    <img src="https://media.tenor.com/images/5d32da0f92c19605376e0c48e036e5d8/tenor.gif" alt="Spinning raccoon GIF" class="raccoon-gif">
+  </div>
+
   <div class="container">
     <h1>Find a Nostalgic Hit For Your Month</h1>
     <div class="select-container">
@@ -40,6 +45,8 @@
     <div id="topReleases" class="top-releases">
       <ul id="releaseList"></ul>
     </div>
+  </div>
+
   <script>
     // Function to fetch top releases data from Spotify API for a specific year and month
     async function fetchTopReleases(year, month) {
