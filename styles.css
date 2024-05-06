@@ -115,9 +115,14 @@ h1 {
 /* Dancing monkey */
 .dancing-monkey {
   margin-top: 50px;
+  text-align: center;
 }
 
 /* Dancing monkey image */
 .dancing-monkey img {
-  max-width: 300px;
+  max-width: 100%; /* Make the image fill its container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 400px; /* Set maximum height */
+  display: block; /* Center the image horizontally */
+  margin: 0 auto; /* Center the image horizontally */
 }
