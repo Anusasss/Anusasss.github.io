@@ -117,15 +117,16 @@ h1 {
   box-shadow: 0 5px 15px rgba(46, 204, 113, 0.5);
 }
 
-/* Spinning raccoon */
+/* Dancing monkey */
 .dancing-monkey {
   position: absolute;
-  top: 50%;
+  top: 20px; /* Adjust distance from top */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure it's above other elements */
 }
 
-/* Spinning raccoon image */
+/* Dancing monkey image */
 .dancing-monkey img {
   max-width: 70%; /* Adjust size */
 }
