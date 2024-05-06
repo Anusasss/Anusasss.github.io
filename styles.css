@@ -9,12 +9,16 @@
 .dark-mode {
   background-color: #000;
   color: #fff;
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
 }
 
 /* Basic styles for container */
 .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 800px;
-  margin: 0 auto;
   padding: 40px;
   text-align: center;
   background-color: #111;
@@ -26,7 +30,7 @@
 h1 {
   font-size: 36px;
   margin-bottom: 30px;
-  font-weight: 400;
+  font-weight: bold; /* Use bold font weight */
   letter-spacing: 1px;
 }
 
@@ -35,6 +39,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center; /* Center vertically */
   gap: 20px;
 }
 
@@ -115,8 +120,7 @@ h1 {
 /* Dancing monkey */
 .dancing-monkey {
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 /* Dancing monkey image */
@@ -124,5 +128,6 @@ h1 {
   max-width: 100%; /* Make the image fill its container */
   height: auto; /* Maintain aspect ratio */
   max-height: 400px; /* Set maximum height */
+  display: block; /* Center the image horizontally */
+  margin: 0 auto; /* Center the image horizontally */
 }
-
