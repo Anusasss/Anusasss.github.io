@@ -117,17 +117,15 @@ h1 {
   box-shadow: 0 5px 15px rgba(46, 204, 113, 0.5);
 }
 
-.dancing-monkey {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-  }
+/* Spinning raccoon */
+.spinning-raccoon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-/* Dancing monkey image */
-.dancing-monkey img {
-  max-width: 100%; /* Make the image fill its container */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 400px; /* Set maximum height */
+/* Spinning raccoon image */
+.raccoon-gif {
+  max-width: 70%; /* Adjust size */
 }
