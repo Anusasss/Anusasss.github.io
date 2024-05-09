@@ -121,7 +121,7 @@ h1 {
 .dancing-monkey {
   position: absolute;
   top: 50%;
-  left: 20px; /* Adjust the left position as needed */
+  left: 100px; /* Adjust the left position as needed */
   transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
 }
