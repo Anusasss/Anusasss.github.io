@@ -120,13 +120,15 @@ h1 {
 /* Dancing monkey */
 .dancing-monkey {
   position: absolute;
-  top: 20px; /* Adjust distance from top */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 0; /* Position it to the left */
+  transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
 }
 
 /* Dancing monkey image */
 .dancing-monkey img {
-  max-width: 70%; /* Adjust size */
+  max-width: 498px; /* Adjust size */
+  height: auto;
 }
+
