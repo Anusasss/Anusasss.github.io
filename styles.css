@@ -142,7 +142,7 @@ h1 {
 .cool-gif {
   position: absolute;
   top: 50%;
-  left: 20px; /* Adjust the left position as needed */
+  left: calc(100% + 100px); /* Adjust the left position as needed */
   transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
 }
