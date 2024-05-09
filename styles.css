@@ -128,6 +128,10 @@ h1 {
 
 /* Dancing monkey image */
 .dancing-monkey img {
+  position: absolute;
+  top: 50%;
+  left: 40px; /* Adjust the left position as needed */
+  transform: translateY(-50%);
   max-width: 498px; /* Adjust size */
   height: auto;
 }
