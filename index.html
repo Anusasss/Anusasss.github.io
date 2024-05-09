@@ -13,7 +13,7 @@
       <div class="select-wrapper">
         <label for="year">Select Year:</label>
         <select id="year" class="select-large">
-          <!-- Populate with years from 2015 to 2015 -->
+          <!-- Populate with years from 1995 to 2015 -->
           <!-- Options will be added dynamically using JavaScript -->
         </select>
       </div>
@@ -63,9 +63,51 @@
         '2015/10': '3SicnDKoXzDMZ8HJUVFuQt',
         '2015/11': '1SRIoXyzqMKmxaAO4GmNIV',
         '2015/12': '3Iev42KrJ2xkzptreh4Jvf',
+        '2014/01': '3gaLb5PddshyrIotaBr3uB',
+        '2014/02': '36hZyuN7cmSXbJOhg4pK93',
+        '2014/03': '60P7yIZaJElz7SIN6MYsMa',
+        '2014/04': '4h9d3m6H3pmTk8L3TaeOn0',
+        '2014/05': '5d6mmzf0LvmIfA1IXXpjh7',
+        '2014/06': '4oT7DO0gchmK75lvsyksis',
+        '2014/07': '5wIT7Xfur4BpnoTZIw6IeX',
+        '2014/08': '4imn2jYIPtjkCEvFwgtsbO',
+        '2014/09': '69V6sH7CNyJ6kjXLQfwRUF',
+        '2014/10': '3PuV7XsESK31cyZkS39eCC',
+        '2014/11': '2V3uyyGqqARl9p7PQmZTud',
+        '2014/12': '0irN7NndJTlwVWcrUZKmlC',
+        '2013/01': '7AqC7hcmGBGZLpKo3RO1A1',
+        '2013/02': '0NFs4NQ5nCzqvTzQvz3FvE',
+        '2013/03': '4CaYhMQ3IIQY2manxWcRvj',
+        '2013/04': '2LRD9u8zKmT5gtMPD6CJqp',
+        '2013/05': '0ickzWtzcekFkEiPlvisvc',
+        '2013/06': '0OlPufIBjYepS5pWDAyqCH',
+        '2013/07': '2RtrP9bfqIxKG14R9yinIJ',
+        '2013/08': '0UMwW3sIsHgOBgufTgwVIj',
+        '2013/09': '6SnH9glUeWPBh70Bn2ultV',
+        '2013/10': '5bypPBbPILTdFbqfbAStVP',
+        '2013/11': '0FfH0cdHBfINPxKI6Ppnkh',
+        '2013/12': '5X9tQcsiPqHeZnCrIpn5sE',
+        '2012/01': '5w6e8NrjwUYZf4k418GhZM',
+        '2012/02': '66U9wMrfcossvNQ3CAaBTp',
+        '2012/03': '7MPQTi2yT1YY1OwLS0h9gH',
+        '2012/04': '1f7Pb4f8OPEJkVNXjHu52U',
+        '2012/05': '56LqnRWEhZfQixbhAT0Wo3',
+        '2012/06': '4OfajDOm2L7ElloSoqa46o',
+        '2012/07': '3dWH4X3TbIssGWKIRuiAMH',
+        '2012/08': '5I3Y98fBgAILA5Ib26vfJ9',
+        '2012/09': '6IseQf6MkBdduoGO87RlgV',
+        '2012/10': '0pA2HZnMRGmBSn5f20o5aI',
+        '2012/11': '5HSy8shP9na08BQxKjbaAV',
+        '2012/12': '1mgfMnOel8C2S0t6Bq6Tt2',
+        '2011/01': '', // You can add the playlists for 2011 if you have them
+        // Add playlists for other years if available
       };
 
       const playlistId = playlists[`${year}/${month.toString().padStart(2, '0')}`];
+      if (!playlistId) {
+        console.error(`No playlist found for ${year}/${month.toString().padStart(2, '0')}`);
+        return [];
+      }
       const apiUrl = `https://api.spotify.com/v1/playlists/${playlistId}/tracks?market=US&fields=items(track(name,id))&limit=3&offset=0`;
 
       try {
@@ -130,7 +172,7 @@
     // Function to populate year dropdown with options
     function populateYearDropdown() {
       const yearDropdown = document.getElementById("year");
-      for (let year = 2015; year <= 2015; year++) { // Change range if needed
+      for (let year = 1995; year <= 2015; year++) {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
