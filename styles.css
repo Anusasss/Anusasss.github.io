@@ -121,9 +121,15 @@ h1 {
 .dancing-monkey {
   position: absolute;
   top: 50%;
-  left: 0; /* Position it to the left */
+  left: calc(50% - 250px); /* Adjust based on the width of the monkey (498 / 2) */
   transform: translateY(-50%);
   z-index: 1; /* Ensure it's above other elements */
+}
+
+/* Adjusting the position to the left of the menu */
+.select-container {
+  position: relative;
+  z-index: 2; /* Ensure it's above the dancing monkey */
 }
 
 /* Dancing monkey image */
@@ -131,4 +137,5 @@ h1 {
   max-width: 498px; /* Adjust size */
   height: auto;
 }
+
 
