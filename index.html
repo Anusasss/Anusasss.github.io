@@ -42,12 +42,16 @@
         </div>
 
         <!-- Notebook Area -->
-        <div class="notebook" id="notebook-area" style="display: none;">
-            <textarea id="notes" rows="10" placeholder="Notes here..."></textarea>
-            <br>
-            <button id="save-notes" class="button save-clear">Save Notes</button>
-            <button id="clear-notes" class="button save-clear">Clear Notes</button>
-        </div>
+<div class="notebook" id="notebook-area" style="display: none;">
+    <textarea id="notes" rows="10" placeholder="Write your notes here..."></textarea>
+    <br>
+    <button id="save-notes" class="button save-clear">Save Notes</button>
+    <button id="clear-notes" class="button save-clear">Clear Notes</button>
+    <button id="export-notes" class="button save-clear">Export Notes</button>
+    <input type="file" id="import-notes" style="display: none;" />
+    <button id="import-notes-btn" class="button save-clear">Import Notes</button>
+</div>
+
 
         <!-- Forget Me Button -->
         <button id="forget-me" class="button forget-me">Forget Me</button>
