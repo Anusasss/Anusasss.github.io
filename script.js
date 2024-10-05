@@ -1,27 +1,64 @@
-function fetchTopSongs() {
-    const year = document.getElementById("year").value;
-    const month = document.getElementById("month").value;
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if user is already logged in
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        showMainContent();
+    }
 
-    // Make a request to the backend to fetch top songs for the selected year and month
-    // You can use Fetch API or XMLHttpRequest for this purpose
-    // Example:
-    fetch(`/top-songs?year=${year}&month=${month}`)
-        .then(response => response.json())
-        .then(data => {
-            displayTopSongs(data);
-        })
-        .catch(error => console.error('Error:', error));
-}
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
 
-function displayTopSongs(data) {
-    const topSongsDiv = document.getElementById("topSongs");
-    topSongsDiv.innerHTML = ""; // Clear previous content
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('remember').checked;
+        const errorMessage = document.getElementById('error-message');
 
-    const topSongsList = document.createElement("ol");
-    data.forEach(song => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${song.rank}. ${song.title} - ${song.artist}`;
-        topSongsList.appendChild(listItem);
+        // Check credentials
+        if (username === 'Anusass' && password === 'Papanusas') {
+            // If "Remember Login" is checked, store login status
+            if (rememberMe) {
+                localStorage.setItem("isLoggedIn", "true");
+            }
+            // Hide login and show the main content
+            showMainContent();
+        } else {
+            // Display error message
+            errorMessage.textContent = 'Invalid username or password.';
+        }
     });
-    topSongsDiv.appendChild(topSongsList);
+
+    // Load saved notes only after login
+    document.getElementById("save-notes").addEventListener("click", function() {
+        const notes = document.getElementById("notes").value;
+        localStorage.setItem("notes", notes);
+        alert("Notes saved!");
+    });
+
+    document.getElementById("clear-notes").addEventListener("click", function() {
+        localStorage.removeItem("notes");
+        document.getElementById("notes").value = "";
+        alert("Notes cleared!");
+    });
+
+    // Forget Me functionality
+    document.getElementById("forget-me").addEventListener("click", function() {
+        localStorage.removeItem("isLoggedIn");
+        alert("Your login information has been cleared.");
+        // Optionally, reload the page to show the login form again
+        location.reload();
+    });
+});
+
+// Function to show the main content and hide login form
+function showMainContent() {
+    document.getElementById('login-container').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    
+    // Show notebook area and load saved notes
+    const savedNotes = localStorage.getItem("notes");
+    const notebookArea = document.getElementById("notebook-area");
+    notebookArea.style.display = 'block'; // Show notebook area
+
+    if (savedNotes) {
+        document.getElementById("notes").value = savedNotes;
+    }
 }
