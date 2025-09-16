@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
       rows.forEach(row => {
         const text = row.textContent.toLowerCase();
         row.style.display = text.includes(query) ? "" : "none";
-        });
       });
     });
   });
