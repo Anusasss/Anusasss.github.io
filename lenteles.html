@@ -4,23 +4,21 @@
   <meta charset="UTF-8">
   <title>Bendravimo analizė</title>
   <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
   <nav>
-    <ul>
-      <li><a href="index.html">1. Titulinis</a></li>
-      <li><a href="lenteles.html" class="active">2. Lentelės</a></li>
-    </ul>
+    <button onclick="location.href='index.html'">1. Titulinis</button>
+    <button onclick="location.href='lenteles.html'" class="active">2. Lentelės</button>
   </nav>
   <main>
-    <h1>🧩 Bendravimo proceso elementai</h1>
-    <table>
+    <h1>🔍 Paieška lentelėse</h1>
+    <input type="text" id="searchInput" placeholder="Ieškoti...">
+
+    <h2>🧩 Bendravimo proceso elementai</h2>
+    <table class="searchable">
       <thead>
-        <tr>
-          <th>Elementas</th>
-          <th>Aprašymas</th>
-          <th>Pavyzdys iš seminaro</th>
-        </tr>
+        <tr><th>Elementas</th><th>Aprašymas</th><th>Pavyzdys iš seminaro</th></tr>
       </thead>
       <tbody>
         <tr><td>Siuntėjas</td><td>Asmuo, kuris siunčia žinutę</td><td>Dėstytoja užduoda klausimą studentams</td></tr>
@@ -32,14 +30,10 @@
       </tbody>
     </table>
 
-    <h1>🌟 Bendravimo fenomenai</h1>
-    <table>
+    <h2>🌟 Bendravimo fenomenai</h2>
+    <table class="searchable">
       <thead>
-        <tr>
-          <th>Fenomenas</th>
-          <th>Aprašymas</th>
-          <th>Pavyzdys iš seminaro</th>
-        </tr>
+        <tr><th>Fenomenas</th><th>Aprašymas</th><th>Pavyzdys iš seminaro</th></tr>
       </thead>
       <tbody>
         <tr><td>Neverbalinė komunikacija</td><td>Kūno kalba, mimika, gestai</td><td>Studentas linkčioja galvą, parodydamas pritarimą</td></tr>
