@@ -1,60 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AP Essentials - Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bendravimo proceso analizė</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Login Form -->
-    <div class="login-container" id="login-container">
-        <h2>Login to AP Essentials</h2>
-        <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+  <div class="container">
+    <h1>🧩 Bendravimo proceso elementai</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Elementas</th>
+          <th>Aprašymas</th>
+          <th>Pavyzdys iš seminaro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Siuntėjas</td>
+          <td>Asmuo, kuris siunčia žinutę</td>
+          <td>Dėstytoja užduoda klausimą studentams</td>
+        </tr>
+        <tr>
+          <td>Gavėjas</td>
+          <td>Asmuo, kuris priima žinutę</td>
+          <td>Studentai klausosi ir atsako į klausimą</td>
+        </tr>
+        <tr>
+          <td>Žinutė</td>
+          <td>Informacija, kuri perduodama</td>
+          <td>„Kaip manote, kas lemia žmogaus motyvaciją?“</td>
+        </tr>
+        <tr>
+          <td>Kanalas</td>
+          <td>Priemonė, kuria perduodama žinutė</td>
+          <td>Žodinis bendravimas, PowerPoint skaidrės</td>
+        </tr>
+        <tr>
+          <td>Grįžtamasis ryšys</td>
+          <td>Atsakas į žinutę</td>
+          <td>Studentas pakomentuoja ar užduoda papildomą klausimą</td>
+        </tr>
+        <tr>
+          <td>Triukšmas</td>
+          <td>Bet kas, kas trukdo bendravimui</td>
+          <td>Triukšmas iš koridoriaus, nesusikalbėjimas dėl termino</td>
+        </tr>
+      </tbody>
+    </table>
 
-            <div class="remember-me">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember Login</label>
-            </div>
-
-            <button type="submit">Login</button>
-            <p id="error-message"></p>
-        </form>
-    </div>
-
-    <!-- Main Content - Hidden until logged in -->
-    <div class="container" id="main-content" style="display: none;">
-        <header>
-            <h1>AP Essentials</h1>
-        </header>
-
-        <div class="button-container">
-            <a href="https://www.facebook.com/AiniusPretkelaitiss/" target="_blank" class="button">Facebook</a>
-            <a href="https://www.instagram.com/ainius_pretkelaitis/" target="_blank" class="button">Instagram</a>
-            <a href="https://discord.gg/d3kQZGH57d" target="_blank" class="button">Discord</a>
-            <a href="CTT.ps1" download="CTT.ps1" class="button">Download CTT Script</a>
-        </div>
-
-        <!-- Notebook Area -->
-<div class="notebook" id="notebook-area" style="display: none;">
-    <textarea id="notes" rows="10" placeholder="Write your notes here..."></textarea>
-    <br>
-    <button id="save-notes" class="button save-clear">Save Notes</button>
-    <button id="clear-notes" class="button save-clear">Clear Notes</button>
-    <button id="export-notes" class="button save-clear">Export Notes</button>
-    <input type="file" id="import-notes" style="display: none;" />
-    <button id="import-notes-btn" class="button save-clear">Import Notes</button>
-</div>
-
-
-        <!-- Forget Me Button -->
-        <button id="forget-me" class="button forget-me">Forget Me</button>
-    </div>
+    <h1>🌟 Bendravimo fenomenai</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Fenomenas</th>
+          <th>Aprašymas</th>
+          <th>Pavyzdys iš seminaro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Neverbalinė komunikacija</td>
+          <td>Kūno kalba, mimika, gestai</td>
+          <td>Studentas linkčioja galvą, parodydamas pritarimą</td>
+        </tr>
+        <tr>
+          <td>Socialinis palengvinimas</td>
+          <td>Žmonės elgiasi aktyviau stebimi kitų</td>
+          <td>Studentai kalba drąsiau, kai dėstytoja juos giria</td>
+        </tr>
+        <tr>
+          <td>Grupės dinamika</td>
+          <td>Grupės narių tarpusavio sąveika</td>
+          <td>Vienas studentas dominuoja diskusijoje, kiti pasyvesni</td>
+        </tr>
+        <tr>
+          <td>Empatija</td>
+          <td>Gebėjimas įsijausti į kito emocijas</td>
+          <td>Studentas jautriai reaguoja į kolegos pasidalintą patirtį</td>
+        </tr>
+        <tr>
+          <td>Stereotipai</td>
+          <td>Išankstinės nuostatos apie kitus</td>
+          <td>Vienas dalyvis mano, kad vyresni studentai mažiau supranta technologijas</td>
+        </tr>
+        <tr>
+          <td>Asmenybės įtaka</td>
+          <td>Asmenybės bruožai veikia bendravimą</td>
+          <td>Ekstravertai kalba daugiau, intravertai labiau klauso</td>
+        </tr>
+        <tr>
+          <td>Kultūriniai skirtumai</td>
+          <td>Skirtingos kultūros lemia komunikacijos stilių</td>
+          <td>Užsienio studentas interpretuoja klausimą kitaip nei lietuvis</td>
+        </tr>
+        <tr>
+          <td>Interpretacijos subjektyvumas</td>
+          <td>Skirtingi žmonės skirtingai supranta tą pačią žinutę</td>
+          <td>Vienas studentas supranta kritiką kaip paskatinimą, kitas – kaip atmetimą</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
