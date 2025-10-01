@@ -1,24 +1,39 @@
+:root {
+  --bg-dark: #0d0d0d;
+  --bg-light: #f5f5f5;
+  --text-dark: #f5f5f5;
+  --text-light: #0d0d0d;
+  --accent: gold;
+  --accent-hover: #ffd700;
+  --card-bg: #1a1a1a;
+  --card-shadow: rgba(255, 215, 0, 0.2);
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  background-color: #1a1a1a;
+  background-color: var(--card-bg);
   padding: 15px;
-  border-bottom: 1px solid gold;
+  border-bottom: 1px solid var(--accent);
   gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav button {
   background-color: #2a2a2a;
-  color: gold;
-  border: 1px solid gold;
+  color: var(--accent);
+  border: 1px solid var(--accent);
   padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -29,12 +44,12 @@ nav button {
 nav button:hover {
   background-color: #333;
   color: #fff;
-  border-color: #ffd700;
+  border-color: var(--accent-hover);
 }
 
 nav button.active {
   background-color: #000;
-  color: #ffd700;
+  color: var(--accent-hover);
   font-weight: bold;
 }
 
@@ -45,7 +60,7 @@ main {
 }
 
 h1, h2 {
-  color: gold;
+  color: var(--accent);
   margin-top: 40px;
 }
 
@@ -53,18 +68,19 @@ input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 30px;
-  border: 1px solid gold;
+  border: 1px solid var(--accent);
   border-radius: 5px;
-  background-color: #1a1a1a;
-  color: #f5f5f5;
+  background-color: var(--card-bg);
+  color: var(--text-dark);
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 40px;
-  background-color: #1a1a1a;
-  border: 1px solid gold;
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 10px var(--card-shadow);
 }
 
 th, td {
@@ -75,8 +91,9 @@ th, td {
 
 th {
   background-color: #2a2a2a;
-  color: gold;
+  color: var(--accent);
   font-weight: 600;
+  cursor: pointer;
 }
 
 tr:nth-child(even) {
@@ -85,4 +102,30 @@ tr:nth-child(even) {
 
 tr:hover {
   background-color: #222;
+}
+
+.highlight {
+  background-color: #333;
+  color: var(--accent-hover);
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--card-shadow);
+  margin-bottom: 30px;
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--card-bg);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2em;
 }
