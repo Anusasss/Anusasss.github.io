@@ -2,51 +2,53 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bendravimo analizė</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
 </head>
 <body>
   <nav>
-    <button onclick="location.href='index.html'">1. Titulinis</button>
-    <button onclick="location.href='lenteles.html'" class="active">2. Lentelės</button>
-    <button onclick="location.href='lenteles copy.html'">3. Basic</button>
+    <div class="logo">🧠 Refleksijos</div>
+    <div class="nav-buttons">
+      <button onclick="location.href='index.html'">Titulinis</button>
+      <button onclick="location.href='lenteles.html'" class="active">Lentelės</button>
+      <button onclick="location.href='lenteles copy.html'">Basic</button>
+    </div>
   </nav>
   <main>
-    <h1>🔍 Paieška lentelėse</h1>
-    <input type="text" id="searchInput" placeholder="Ieškoti...">
+    <section class="card">
+      <h1>🔍 Paieška lentelėse</h1>
+      <input type="text" id="searchInput" placeholder="Ieškoti...">
+    </section>
 
-    <h2>🧩 Bendravimo proceso elementai</h2>
-    <table class="searchable">
-      <thead>
-        <tr><th>Elementas</th><th>Aprašymas</th><th>Pavyzdys iš seminaro</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Siuntėjas</td><td>Asmuo, kuris siunčia žinutę</td><td>Dėstytoja užduoda klausimą studentams</td></tr>
-        <tr><td>Gavėjas</td><td>Asmuo, kuris priima žinutę</td><td>Studentai klausosi ir atsako į klausimą</td></tr>
-        <tr><td>Žinutė</td><td>Informacija, kuri perduodama</td><td>„Kaip manote, kas lemia žmogaus motyvaciją?“</td></tr>
-        <tr><td>Kanalas</td><td>Priemonė, kuria perduodama žinutė</td><td>Žodinis bendravimas, PowerPoint skaidrės</td></tr>
-        <tr><td>Grįžtamasis ryšys</td><td>Atsakas į žinutę</td><td>Studentas pakomentuoja ar užduoda papildomą klausimą</td></tr>
-        <tr><td>Triukšmas</td><td>Bet kas, kas trukdo bendravimui</td><td>Triukšmas iš koridoriaus, nesusikalbėjimas dėl termino</td></tr>
-      </tbody>
-    </table>
+    <section class="card">
+      <h2>🧩 Bendravimo proceso elementai</h2>
+      <table class="searchable">
+        <thead>
+          <tr><th>Elementas</th><th>Aprašymas</th><th>Pavyzdys</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Siuntėjas</td><td>Asmuo, kuris siunčia žinutę</td><td>Dėstytoja užduoda klausimą</td></tr>
+          <tr><td>Gavėjas</td><td>Asmuo, kuris priima žinutę</td><td>Studentai atsako</td></tr>
+          <tr><td>Žinutė</td><td>Perduodama informacija</td><td>„Kas lemia motyvaciją?“</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-    <h2>🌟 Bendravimo fenomenai</h2>
-    <table class="searchable">
-      <thead>
-        <tr><th>Fenomenas</th><th>Aprašymas</th><th>Pavyzdys iš seminaro</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Neverbalinė komunikacija</td><td>Kūno kalba, mimika, gestai</td><td>Studentas linkčioja galvą, parodydamas pritarimą</td></tr>
-        <tr><td>Socialinis palengvinimas</td><td>Žmonės elgiasi aktyviau stebimi kitų</td><td>Studentai kalba drąsiau, kai dėstytoja juos giria</td></tr>
-        <tr><td>Grupės dinamika</td><td>Grupės narių tarpusavio sąveika</td><td>Vienas studentas dominuoja diskusijoje, kiti pasyvesni</td></tr>
-        <tr><td>Empatija</td><td>Gebėjimas įsijausti į kito emocijas</td><td>Studentas jautriai reaguoja į kolegos pasidalintą patirtį</td></tr>
-        <tr><td>Stereotipai</td><td>Išankstinės nuostatos apie kitus</td><td>Vienas dalyvis mano, kad vyresni studentai mažiau supranta technologijas</td></tr>
-        <tr><td>Asmenybės įtaka</td><td>Asmenybės bruožai veikia bendravimą</td><td>Ekstravertai kalba daugiau, intravertai labiau klauso</td></tr>
-        <tr><td>Kultūriniai skirtumai</td><td>Skirtingos kultūros lemia komunikacijos stilių</td><td>Užsienio studentas interpretuoja klausimą kitaip nei lietuvis</td></tr>
-        <tr><td>Interpretacijos subjektyvumas</td><td>Skirtingi žmonės skirtingai supranta tą pačią žinutę</td><td>Vienas studentas supranta kritiką kaip paskatinimą, kitas – kaip atmetimą</td></tr>
-      </tbody>
-    </table>
+    <section class="card">
+      <h2>🌟 Bendravimo fenomenai</h2>
+      <table class="searchable">
+        <thead>
+          <tr><th>Fenomenas</th><th>Aprašymas</th><th>Pavyzdys</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Empatija</td><td>Įsijautimas į kito emocijas</td><td>Studentas jautriai reaguoja</td></tr>
+          <tr><td>Stereotipai</td><td>Išankstinės nuostatos</td><td>Technologijų suvokimas</td></tr>
+        </tbody>
+      </table>
+    </section>
   </main>
+  <button id="themeToggle" class="theme-toggle">🌓</button>
 </body>
 </html>
