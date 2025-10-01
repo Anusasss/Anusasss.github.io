@@ -6,37 +6,43 @@
   <title>Bendravimo analizė</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav>
-    <div class="logo">🧠 Refleksijos</div>
+    <div class="logo"><i class="fas fa-brain"></i> Refleksijos</div>
     <div class="nav-buttons">
       <button onclick="location.href='index.html'">Titulinis</button>
       <button onclick="location.href='lenteles.html'" class="active">Lentelės</button>
       <button onclick="location.href='lenteles copy.html'">Basic</button>
     </div>
   </nav>
+
   <main>
-    <section class="card">
+    <section class="card glass" data-aos="fade-up">
       <h1>🔍 Paieška lentelėse</h1>
       <input type="text" id="searchInput" placeholder="Ieškoti...">
     </section>
 
-    <section class="card">
+    <section class="card glass" data-aos="fade-up" data-aos-delay="200">
       <h2>🧩 Bendravimo proceso elementai</h2>
       <table class="searchable">
         <thead>
           <tr><th>Elementas</th><th>Aprašymas</th><th>Pavyzdys</th></tr>
         </thead>
         <tbody>
-          <tr><td>Siuntėjas</td><td>Asmuo, kuris siunčia žinutę</td><td>Dėstytoja užduoda klausimą</td></tr>
-          <tr><td>Gavėjas</td><td>Asmuo, kuris priima žinutę</td><td>Studentai atsako</td></tr>
-          <tr><td>Žinutė</td><td>Perduodama informacija</td><td>„Kas lemia motyvaciją?“</td></tr>
+          <tr><td>Siuntėjas</td><td>Asmuo, kuris siunčia žinutę</td><td>Dėstytoja užduoda klausimą studentams</td></tr>
+          <tr><td>Gavėjas</td><td>Asmuo, kuris priima žinutę</td><td>Studentai atsako į klausimą</td></tr>
+          <tr><td>Žinutė</td><td>Informacija, kuri perduodama</td><td>„Kas lemia žmogaus motyvaciją?“</td></tr>
+          <tr><td>Kanalas</td><td>Perdavimo priemonė</td><td>Žodinis bendravimas, skaidrės</td></tr>
+          <tr><td>Grįžtamasis ryšys</td><td>Atsakas į žinutę</td><td>Studentas pakomentuoja</td></tr>
+          <tr><td>Triukšmas</td><td>Trukdžiai komunikacijai</td><td>Triukšmas iš koridoriaus</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section class="card">
+    <section class="card glass" data-aos="fade-up" data-aos-delay="400">
       <h2>🌟 Bendravimo fenomenai</h2>
       <table class="searchable">
         <thead>
@@ -45,10 +51,18 @@
         <tbody>
           <tr><td>Empatija</td><td>Įsijautimas į kito emocijas</td><td>Studentas jautriai reaguoja</td></tr>
           <tr><td>Stereotipai</td><td>Išankstinės nuostatos</td><td>Technologijų suvokimas</td></tr>
+          <tr><td>Grupės dinamika</td><td>Grupės sąveika</td><td>Vienas studentas dominuoja</td></tr>
+          <tr><td>Neverbalinė komunikacija</td><td>Kūno kalba, mimika</td><td>Linkčiojimas galva</td></tr>
+          <tr><td>Socialinis palengvinimas</td><td>Aktyvumas stebint</td><td>Studentai kalba drąsiau</td></tr>
+          <tr><td>Kultūriniai skirtumai</td><td>Skirtingi komunikacijos stiliai</td><td>Užsienio studento interpretacija</td></tr>
         </tbody>
       </table>
     </section>
   </main>
-  <button id="themeToggle" class="theme-toggle">🌓</button>
+
+  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>

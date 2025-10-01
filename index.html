@@ -3,36 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anuso Psichologijos refleksijos</title>
+  <title>Psichologijos Refleksijos</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav>
-    <div class="logo">🧠 Refleksijos</div>
+    <div class="logo"><i class="fas fa-brain"></i> Refleksijos</div>
     <div class="nav-buttons">
       <button onclick="location.href='index.html'" class="active">Titulinis</button>
       <button onclick="location.href='lenteles.html'">Lentelės</button>
       <button onclick="location.href='lenteles copy.html'">Basic</button>
     </div>
   </nav>
+
   <main>
-    <section class="hero card">
+    <section class="hero card glass" data-aos="fade-up">
       <h1>🎓 Psichologijos Refleksijos</h1>
-      <p>Ši svetainė — tavo asmeninė erdvė refleksijoms, analizėms ir įžvalgoms iš psichologijos seminarų.</p>
-      <a href="lenteles.html" class="cta-button">Pradėti analizę</a>
+      <p>Asmeninė erdvė refleksijoms, analizėms ir įžvalgoms iš psichologijos seminarų. Sukurta tam, kad padėtų tau augti ir suprasti bendravimo pasaulį giliau.</p>
+      <a href="lenteles.html" class="cta-button pulse">Pradėti analizę</a>
     </section>
 
-    <section class="features card">
+    <section class="features card glass" data-aos="fade-up" data-aos-delay="200">
       <h2>🚀 Funkcionalumas</h2>
-      <ul>
-        <li>🔍 Paieška ir filtravimas lentelėse</li>
-        <li>📊 Interaktyvūs duomenys</li>
-        <li>🌓 Šviesi / tamsi tema</li>
-        <li>📱 Mobilus dizainas</li>
-      </ul>
+      <div class="feature-grid">
+        <div><i class="fas fa-search"></i> Paieška lentelėse</div>
+        <div><i class="fas fa-sort"></i> Rikiavimas duomenų</div>
+        <div><i class="fas fa-moon"></i> Šviesi / tamsi tema</div>
+        <div><i class="fas fa-mobile-alt"></i> Mobilus dizainas</div>
+        <div><i class="fas fa-table"></i> Interaktyvios lentelės</div>
+        <div><i class="fas fa-file-download"></i> Ateityje: PDF atsisiuntimai</div>
+      </div>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="400">
+      <h2>📚 Tikslas</h2>
+      <p>Ši svetainė padeda struktūruoti tavo mintis, reflektuoti seminarų turinį ir dalintis įžvalgomis su kitais. Ji sukurta taip, kad būtų ne tik naudinga, bet ir graži.</p>
     </section>
   </main>
-  <button id="themeToggle" class="theme-toggle">🌓</button>
+
+  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>

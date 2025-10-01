@@ -6,35 +6,59 @@
   <title>Demo lentelės</title>
   <link rel="stylesheet" href="styles.css">
   <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <nav>
-    <div class="logo">🧠 Refleksijos</div>
+    <div class="logo"><i class="fas fa-brain"></i> Refleksijos</div>
     <div class="nav-buttons">
       <button onclick="location.href='index.html'">Titulinis</button>
       <button onclick="location.href='lenteles.html'">Lentelės</button>
       <button onclick="location.href='lenteles copy.html'" class="active">Basic</button>
     </div>
   </nav>
+
   <main>
-    <section class="card">
+    <section class="card glass" data-aos="fade-up">
       <h1>📊 Pavyzdinės lentelės</h1>
       <input type="text" id="searchInput" placeholder="Ieškoti...">
     </section>
 
-    <section class="card">
-      <h2>📦 Produktai</h2>
+    <section class="card glass" data-aos="fade-up" data-aos-delay="200">
+      <h2>📦 Produktų sąrašas</h2>
       <table class="searchable">
         <thead>
           <tr><th>Pavadinimas</th><th>Kategorija</th><th>Kaina</th></tr>
         </thead>
         <tbody>
           <tr><td>Nešiojamas kompiuteris</td><td>Elektronika</td><td>899€</td></tr>
-          <tr><td>Knyga</td><td>Literatūra</td><td>25€</td></tr>
+          <tr><td>Knyga „Psichologijos pagrindai“</td><td>Literatūra</td><td>25€</td></tr>
+          <tr><td>Sportiniai bateliai</td><td>Apranga</td><td>120€</td></tr>
+          <tr><td>Kavos aparatas</td><td>Namų technika</td><td>199€</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="400">
+      <h2>🧠 Kompetencijų sąrašas</h2>
+      <table class="searchable">
+        <thead>
+          <tr><th>Kompetencija</th><th>Aprašymas</th><th>Taikymas</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Komandinis darbas</td><td>Gebėjimas dirbti grupėje</td><td>Projektų valdymas</td></tr>
+          <tr><td>Kritinis mąstymas</td><td>Gebėjimas analizuoti ir vertinti</td><td>Sprendimų priėmimas</td></tr>
+          <tr><td>Komunikacija</td><td>Aiškus ir efektyvus bendravimas</td><td>Prezentacijos, derybos</td></tr>
+          <tr><td>Technologinis raštingumas</td><td>Gebėjimas naudotis IT priemonėmis</td><td>Duomenų analizė</td></tr>
         </tbody>
       </table>
     </section>
   </main>
-  <button id="themeToggle" class="theme-toggle">🌓</button>
+
+  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
