@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Psichologijos Refleksijos</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="favicon-dark.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <nav>
@@ -34,7 +35,7 @@
         <div><i class="fas fa-moon"></i> Šviesi / tamsi tema</div>
         <div><i class="fas fa-mobile-alt"></i> Mobilus dizainas</div>
         <div><i class="fas fa-table"></i> Interaktyvios lentelės</div>
-        <div><i class="fas fa-file-download"></i> Ateityje: PDF atsisiuntimai</div>
+        <div><i class="fas fa-calculator"></i> Įmontuotas kalkuliatorius</div>
       </div>
     </section>
 
@@ -42,7 +43,33 @@
       <h2>📚 Tikslas</h2>
       <p>Ši svetainė padeda struktūruoti tavo mintis, reflektuoti seminarų turinį ir dalintis įžvalgomis su kitais. Ji sukurta taip, kad būtų ne tik naudinga, bet ir graži.</p>
     </section>
+
+    <div id="techQuote" class="card glass" data-aos="fade-up" data-aos-delay="600"></div>
   </main>
+
+  <div id="clockWidget" class="card glass clock-widget"></div>
+  <div id="calculator" class="glass card calculator-widget" data-aos="fade-left">
+    <div class="calc-display" id="calcDisplay">0</div>
+    <div class="calc-buttons">
+      <button onclick="clearCalc()">C</button>
+      <button onclick="appendCalc('/')">÷</button>
+      <button onclick="appendCalc('*')">×</button>
+      <button onclick="appendCalc('-')">−</button>
+      <button onclick="appendCalc('7')">7</button>
+      <button onclick="appendCalc('8')">8</button>
+      <button onclick="appendCalc('9')">9</button>
+      <button onclick="appendCalc('+')">+</button>
+      <button onclick="appendCalc('4')">4</button>
+      <button onclick="appendCalc('5')">5</button>
+      <button onclick="appendCalc('6')">6</button>
+      <button onclick="calculateCalc()">=</button>
+      <button onclick="appendCalc('1')">1</button>
+      <button onclick="appendCalc('2')">2</button>
+      <button onclick="appendCalc('3')">3</button>
+      <button onclick="appendCalc('0')">0</button>
+      <button onclick="appendCalc('.')">.</button>
+    </div>
+  </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
 
