@@ -2,10 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const tables = document.querySelectorAll(".searchable");
   const themeToggle = document.getElementById("themeToggle");
-  const clock = document.getElementById("clockWidget");
-  const quoteBox = document.getElementById("techQuote");
+  const backToTopButton = document.getElementById("back-to-top");
+  const loaderWrapper = document.querySelector(".loader-wrapper");
 
-  // 🔍 Live search with highlight
+  // Page Loader
+  window.addEventListener("load", () => {
+    if (loaderWrapper) {
+      loaderWrapper.style.display = "none";
+    }
+  });
+
+  // Live search with highlight
   if (searchInput) {
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
@@ -21,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 📊 Sortable table headers
+  // Sortable table headers
   tables.forEach(table => {
     const headers = table.querySelectorAll("th");
     headers.forEach((th, index) => {
@@ -38,12 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🌓 Theme toggle
+  // Theme toggle
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       const isLight = document.body.classList.toggle("light-theme");
-      document.body.style.background = isLight ? "var(--bg-light)" : "var(--bg-dark)";
-      document.body.style.color = isLight ? "var(--text-light)" : "var(--text-dark)";
       localStorage.setItem("theme", isLight ? "light" : "dark");
       updateFavicon(isLight ? "light" : "dark");
     });
@@ -51,13 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "light") {
       document.body.classList.add("light-theme");
-      document.body.style.background = "var(--bg-light)";
-      document.body.style.color = "var(--text-light)";
       updateFavicon("light");
     }
   }
 
-  // 🖼️ Favicon switcher
+  // Favicon switcher
   function updateFavicon(theme) {
     const link = document.querySelector("link[rel~='icon']");
     if (link) {
@@ -65,35 +68,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ⏰ Live clock
-  function updateClock() {
-    if (clock) {
-      const now = new Date();
-      clock.innerText = now.toLocaleString("lt-LT", {
-        weekday: "short",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        day: "2-digit",
-        month: "short",
-        year: "numeric"
-      });
-    }
+  // Back to Top Button
+  if (backToTopButton) {
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    backToTopButton.addEventListener("click", () => {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
   }
-  setInterval(updateClock, 1000);
-  updateClock();
-
-
-
-  // 🎮 Keyboard shortcuts
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "1") location.href = "index.html";
-    if (e.key === "2") location.href = "lenteles.html";
-    if (e.key === "3") location.href = "lenteles copy.html";
-    if (e.key.toLowerCase() === "t") themeToggle?.click();
-  });
-
-  // 🧑‍💻 Console Easter egg
-  console.log("%cSveikas, tech entuziaste! 👨‍💻", "color: gold; font-size: 16px; font-weight: bold;");
-  console.log("Ši svetainė sukurta su meile ir JavaScript. Naršyk, tyrinėk, tobulėk.");
 });
