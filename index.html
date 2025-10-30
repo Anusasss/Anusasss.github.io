@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ainius Pretkelaitis - Asmeninė Svetainė</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="new-styles.css" />
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -13,26 +13,26 @@
 <body>
   <canvas id="cool-canvas"></canvas>
 
-  <main class="main-container">
-    <section class="hero-main card glass">
+  <div class="main-container">
+    <header class="hero-main">
       <h1>Ainius Pretkelaitis</h1>
       <p>Sveiki atvykę į mano asmeninę erdvę! Čia aš dalinuosi savo kelione mokantis psichologijos ir technologijų pasaulių.</p>
-    </section>
+    </header>
 
     <nav class="main-nav">
-      <a href="psychology/psychology.html" class="nav-card glass">
+      <a href="psychology/psychology.html" class="nav-card">
         <i class="fas fa-brain"></i>
         <h2>Psichologija</h2>
         <p>Mano užrašai, analizės ir įžvalgos iš psichologijos pasaulio.</p>
       </a>
-      <a href="tech/tech.html" class="nav-card glass">
+      <a href="tech/tech.html" class="nav-card">
         <i class="fas fa-code"></i>
         <h2>Technologijos</h2>
         <p>Mano projektai, atradimai ir užrašai apie programavimą ir kompiuterių mokslą.</p>
       </a>
     </nav>
 
-    <section id="portfolio" class="portfolio-section card glass">
+    <section id="portfolio" class="portfolio-section">
       <h2><i class="fas fa-briefcase"></i> Portfolio</h2>
       <div class="portfolio-item">
         <h3>Projektas 1</h3>
@@ -43,14 +43,11 @@
         <p>Projekto aprašymas...</p>
       </div>
     </section>
-  </main>
+  </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000 });
-
     const canvas = document.getElementById('cool-canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
@@ -86,7 +83,7 @@
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-            ctx.fillStyle = '#8C5523';
+            ctx.fillStyle = 'rgba(29, 185, 84, 0.2)';
             ctx.fill();
         }
         // check particle position, check mouse position, move the particle, draw the particle
@@ -135,7 +132,7 @@
             let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
             let directionX = (Math.random() * 5) - 2.5;
             let directionY = (Math.random() * 5) - 2.5;
-            let color = '#8C5523';
+            let color = 'rgba(29, 185, 84, 0.2)';
 
             particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
         }
@@ -161,7 +158,7 @@
                 + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
                 if (distance < (canvas.width/7) * (canvas.height/7)) {
                     opacityValue = 1 - (distance/20000);
-                    ctx.strokeStyle='rgba(140,85,35,' + opacityValue + ')';
+                    ctx.strokeStyle='rgba(29, 185, 84, ' + opacityValue + ')';
                     ctx.lineWidth = 1;
                     ctx.beginPath();
                     ctx.moveTo(particlesArray[a].x, particlesArray[a].y);

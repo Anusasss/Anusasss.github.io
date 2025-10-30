@@ -4,53 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Duomenų Struktūros</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../new-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
-    <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-brain"></i> Refleksijos</a></div>
-    <div class="nav-buttons">
-      <button onclick="location.href='../index.html'">Pagrindinis</button>
-      <button onclick="location.href='../psychology/psychology.html'">Psichologija</button>
-      <button onclick="location.href='tech.html'" class="active">Technologijos</button>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero card glass">
+  <div class="section-container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
+          <li><a href="../psychology/psychology.html"><i class="fas fa-brain"></i> Psichologija</a></li>
+          <li><a href="tech.html"><i class="fas fa-code"></i> Technologijos</a></li>
+          <li><a href="web-development-basics.html"><i class="fas fa-globe"></i> Web Programavimo Pagrindai</a></li>
+          <li><a href="data-structures.html" class="active"><i class="fas fa-database"></i> Duomenų Struktūros</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
       <h1><i class="fas fa-database"></i> Duomenų Struktūros</h1>
-      <p>Pagrindinės duomenų struktūros, naudojamos efektyviam duomenų organizavimui ir saugojimui.</p>
-    </section>
-
-    <section class="card glass">
-      <h2>Linijinės Duomenų Struktūros</h2>
-      <p>Elementai išdėstyti nuosekliai, vienas po kito.</p>
-      <ul>
-        <li><strong>Masyvai (Arrays):</strong> Fiksuoto dydžio tos pačio tipo elementų rinkinys, saugomas greta esančiose atminties vietose.</li>
-        <li><strong>Sąrašai (Linked Lists):</strong> Dinaminio dydžio elementų seka, kur kiekvienas elementas (mazgas) turi nuorodą į kitą elementą.</li>
-        <li><strong>Dėklai (Stacks):</strong> "Paskutinis į vidų, pirmas į išorę" (LIFO) principu veikianti struktūra.</li>
-        <li><strong>Eilės (Queues):</strong> "Pirmas į vidų, pirmas į išorę" (FIFO) principu veikianti struktūra.</li>
-      </ul>
-    </section>
-
-    <section class="card glass">
-      <h2>Netiesinės Duomenų Struktūros</h2>
-      <p>Elementai organizuojami hierarchiškai arba tinkliniu formatu.</p>
-      <ul>
-        <li><strong>Medžiai (Trees):</strong> Hierarchinė struktūra, susidedanti iš mazgų, kur vienas mazgas yra šaknis, o kiti - jo vaikai.</li>
-        <li><strong>Grafai (Graphs):</strong> Viršūnių (mazgų) ir briaunų (jungčių) rinkinys, galintis atvaizduoti sudėtingus ryšius.</li>
-        <li><strong>Maišos Lentelės (Hash Tables):</strong> Raktų ir reikšmių porų saugojimo struktūra, leidžianti greitai pasiekti reikšmes pagal raktus.</li>
-      </ul>
-    </section>
-  </main>
+      <section class="card">
+        <h2>Linijinės Duomenų Struktūros</h2>
+        <p>Elementai išdėstyti nuosekliai, vienas po kito.</p>
+        <ul>
+          <li><strong>Masyvai (Arrays):</strong> Fiksuoto dydžio tos pačio tipo elementų rinkinys, saugomas greta esančiose atminties vietose.</li>
+          <li><strong>Sąrašai (Linked Lists):</strong> Dinaminio dydžio elementų seka, kur kiekvienas elementas (mazgas) turi nuorodą į kitą elementą.</li>
+          <li><strong>Dėklai (Stacks):</strong> "Paskutinis į vidų, pirmas į išorę" (LIFO) principu veikianti struktūra.</li>
+          <li><strong>Eilės (Queues):</strong> "Pirmas į vidų, pirmas į išorę" (FIFO) principu veikianti struktūra.</li>
+        </ul>
+      </section>
+      <section class="card">
+        <h2>Netiesinės Duomenų Struktūros</h2>
+        <p>Elementai organizuojami hierarchiškai arba tinkliniu formatu.</p>
+        <ul>
+          <li><strong>Medžiai (Trees):</strong> Hierarchinė struktūra, susidedanti iš mazgų, kur vienas mazgas yra šaknis, o kiti - jo vaikai.</li>
+          <li><strong>Grafai (Graphs):</strong> Viršūnių (mazgų) ir briaunų (jungčių) rinkinys, galintis atvaizduoti sudėtingus ryšius.</li>
+          <li><strong>Maišos Lentelės (Hash Tables):</strong> Raktų ir reikšmių porų saugojimo struktūra, leidžianti greitai pasiekti reikšmes pagal raktus.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>

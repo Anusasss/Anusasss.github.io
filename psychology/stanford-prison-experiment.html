@@ -4,53 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stanfordo Kalėjimo Eksperimentas</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../new-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
-    <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-brain"></i> Refleksijos</a></div>
-    <div class="nav-buttons">
-      <button onclick="location.href='../index.html'">Pagrindinis</button>
-      <button onclick="location.href='psychology.html'">Psichologija</button>
-      <button onclick="location.href='../tech/tech.html'">Technologijos</button>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero card glass" data-aos="fade-up">
+  <div class="section-container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
+          <li><a href="psychology.html"><i class="fas fa-brain"></i> Psichologija</a></li>
+          <li><a href="lenteles.html"><i class="fas fa-table"></i> Bendravimo Analizė</a></li>
+          <li><a href="psychologists.html"><i class="fas fa-users"></i> Žymūs Psichologai</a></li>
+          <li><a href="stanford-prison-experiment.html" class="active"><i class="fas fa-landmark"></i> Stanfordo Eksperimentas</a></li>
+          <li><a href="../tech/tech.html"><i class="fas fa-code"></i> Technologijos</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
       <h1><i class="fas fa-landmark"></i> Stanfordo Kalėjimo Eksperimentas</h1>
-      <p>1971 m. Philip Zimbardo atliktas psichologinis tyrimas, skirtas ištirti situacijos įtaką žmogaus elgesiui.</p>
-    </section>
+      <section class="card">
+        <h2>Eksperimento tikslas</h2>
+        <p>Eksperimentu buvo siekiama išsiaiškinti, ar brutalus elgesys kalėjimuose yra susijęs su pačių kalinių ir prižiūrėtojų asmeninėmis savybėmis, ar su pačios kalėjimo aplinkos situaciniu kontekstu.</p>
+      </section>
+      <section class="card">
+        <h2>Metodologija</h2>
+        <p>24 psichologiškai stabilūs koledžo studentai buvo atsitiktinai paskirti į "kalinių" ir "prižiūrėtojų" vaidmenis imituotame kalėjime, įrengtame Stanfordo universiteto psichologijos pastato rūsyje. Kaliniai buvo "suimti" tikros policijos, o prižiūrėtojai gavo uniformas ir instrukcijas palaikyti tvarką be fizinio smurto.</p>
+      </section>
+      <section class="card">
+        <h2>Rezultatai</h2>
+        <p>Nors eksperimentas buvo suplanuotas dviem savaitėms, jis buvo nutrauktas vos po šešių dienų dėl greitai išryškėjusio ekstremalaus ir patologinio elgesio. Prižiūrėtojai tapo agresyvūs ir sadistiški, o kaliniai tapo pasyvūs, nuolankūs ir patyrė didelį stresą bei nerimą.</p>
+      </section>
+      <section class="card">
+        <h2>Etinės problemos ir kritika</h2>
+        <p>Eksperimentas dažnai minimas kaip neetiškų tyrimų pavyzdys dėl informuoto sutikimo trūkumo, dalyvių patirto piktnaudžiavimo ir Zimbardo dvigubo vaidmens. Mokslo bendruomenė taip pat kritikavo tyrimo validumą, teigdama, kad dalyviai galėjo tiesiog vaidinti pagal stereotipus.</p>
+      </section>
+    </main>
+  </div>
 
-    <section class="card glass" data-aos="fade-up" data-aos-delay="200">
-      <h2>Eksperimento tikslas</h2>
-      <p>Eksperimentu buvo siekiama išsiaiškinti, ar brutalus elgesys kalėjimuose yra susijęs su pačių kalinių ir prižiūrėtojų asmeninėmis savybėmis, ar su pačios kalėjimo aplinkos situaciniu kontekstu.</p>
-    </section>
-
-    <section class="card glass" data-aos="fade-up" data-aos-delay="400">
-      <h2>Metodologija</h2>
-      <p>24 psichologiškai stabilūs koledžo studentai buvo atsitiktinai paskirti į "kalinių" ir "prižiūrėtojų" vaidmenis imituotame kalėjime, įrengtame Stanfordo universiteto psichologijos pastato rūsyje. Kaliniai buvo "suimti" tikros policijos, o prižiūrėtojai gavo uniformas ir instrukcijas palaikyti tvarką be fizinio smurto.</p>
-    </section>
-
-    <section class="card glass" data-aos="fade-up" data-aos-delay="600">
-      <h2>Rezultatai</h2>
-      <p>Nors eksperimentas buvo suplanuotas dviem savaitėms, jis buvo nutrauktas vos po šešių dienų dėl greitai išryškėjusio ekstremalaus ir patologinio elgesio. Prižiūrėtojai tapo agresyvūs ir sadistiški, o kaliniai tapo pasyvūs, nuolankūs ir patyrė didelį stresą bei nerimą.</p>
-    </section>
-
-    <section class="card glass" data-aos="fade-up" data-aos-delay="800">
-      <h2>Etinės problemos ir kritika</h2>
-      <p>Eksperimentas dažnai minimas kaip neetiškų tyrimų pavyzdys dėl informuoto sutikimo trūkumo, dalyvių patirto piktnaudžiavimo ir Zimbardo dvigubo vaidmens. Mokslo bendruomenė taip pat kritikavo tyrimo validumą, teigdama, kad dalyviai galėjo tiesiog vaidinti pagal stereotipus.</p>
-    </section>
-  </main>
-
-  <div id="clockWidget" class="card glass clock-widget"></div>
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>

@@ -4,43 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technologijų Skiltis</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../new-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <nav>
-    <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-brain"></i> Refleksijos</a></div>
-    <div class="nav-buttons">
-      <button onclick="location.href='../index.html'">Pagrindinis</button>
-      <button onclick="location.href='../psychology/psychology.html'">Psichologija</button>
-      <button onclick="location.href='tech.html'" class="active">Technologijos</button>
-    </div>
-  </nav>
+  <div class="section-container">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
+          <li><a href="../psychology/psychology.html"><i class="fas fa-brain"></i> Psichologija</a></li>
+          <li><a href="tech.html" class="active"><i class="fas fa-code"></i> Technologijos</a></li>
+          <li><a href="web-development-basics.html"><i class="fas fa-globe"></i> Web Programavimo Pagrindai</a></li>
+          <li><a href="data-structures.html"><i class="fas fa-database"></i> Duomenų Struktūros</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <section class="hero-main">
+        <h1><i class="fas fa-code"></i> Technologijų Skiltis</h1>
+        <p>Čia rasite mano projektus, atradimus ir užrašus apie programavimą ir kompiuterių mokslą.</p>
+      </section>
 
-  <main>
-    <section class="hero card glass">
-      <h1><i class="fas fa-code"></i> Technologijų Skiltis</h1>
-      <p>Čia rasite mano projektus, atradimus ir užrašus apie programavimą ir kompiuterių mokslą.</p>
-    </section>
-
-    <section class="card-grid">
-      <a href="web-development-basics.html" class="card glass nav-card">
-        <h3><i class="fas fa-globe"></i> Web Programavimo Pagrindai</h3>
-        <p>HTML, CSS ir JavaScript pagrindai, reikalingi kuriant internetines svetaines.</p>
-      </a>
-      <a href="data-structures.html" class="card glass nav-card">
-        <h3><i class="fas fa-database"></i> Duomenų Struktūros</h3>
-        <p>Pagrindinės duomenų struktūros, naudojamos programavime.</p>
-      </a>
-    </section>
-  </main>
+      <section class="card-grid">
+        <a href="web-development-basics.html" class="nav-card">
+          <h3><i class="fas fa-globe"></i> Web Programavimo Pagrindai</h3>
+          <p>HTML, CSS ir JavaScript pagrindai, reikalingi kuriant internetines svetaines.</p>
+        </a>
+        <a href="data-structures.html" class="nav-card">
+          <h3><i class="fas fa-database"></i> Duomenų Struktūros</h3>
+          <p>Pagrindinės duomenų struktūros, naudojamos programavime.</p>
+        </a>
+      </section>
+    </main>
+  </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>AOS.init({ duration: 1000 });</script>
 </body>
 </html>
