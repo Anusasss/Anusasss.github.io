@@ -6,7 +6,7 @@
   <title>Psichologijos Skiltis</title>
   <link rel="stylesheet" href="../jerimy-brown-dark-styles.css" />
   <link rel="icon" href="../favicon-dark.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
@@ -39,6 +39,14 @@
       <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2023 Ainius Pretkelaitis. Visos teisės saugomos.</p>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
 
   <button id="back-to-top" title="Grįžti į viršų"><i class="fas fa-arrow-up"></i></button>
 
@@ -121,6 +129,16 @@
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       const scrolled = (scrollTop / scrollHeight) * 100;
       scrollIndicator.style.width = scrolled + '%';
+    });
+
+    // Sticky Nav on Scroll
+    const mainNav = document.querySelector('.main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) { // Adjust this value as needed
+        mainNav.classList.add('scrolled');
+      } else {
+        mainNav.classList.remove('scrolled');
+      }
     });
   </script>
 </body>
