@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psichologijos Skiltis</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <script defer src="../script.js"></script>
+  <link rel="icon" href="../favicon-dark.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><a href="../index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-brain"></i> Refleksijos</a></div>
+    <div class="nav-buttons">
+      <button onclick="location.href='../index.html'">Pagrindinis</button>
+      <button onclick="location.href='psychology.html'" class="active">Psichologija</button>
+      <button onclick="location.href='../tech/tech.html'">Technologijos</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero card glass">
+      <h1><i class="fas fa-brain"></i> Psichologijos Skiltis</h1>
+      <p>Čia rasite mano surinktą informaciją, analizes ir refleksijas apie psichologiją.</p>
+    </section>
+
+    <section class="card-grid">
+      <a href="lenteles.html" class="card glass nav-card">
+        <h3><i class="fas fa-table"></i> Bendravimo Analizė</h3>
+        <p>Interaktyvios lentelės, skirtos analizuoti bendravimo procesus ir fenomenus.</p>
+      </a>
+      <a href="psychologists.html" class="card glass nav-card">
+        <h3><i class="fas fa-users"></i> Žymūs Psichologai</h3>
+        <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais.</p>
+      </a>
+      <a href="stanford-prison-experiment.html" class="card glass nav-card">
+        <h3><i class="fas fa-landmark"></i> Stanfordo Kalėjimo Eksperimentas</h3>
+        <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
+      </a>
+    </section>
+  </main>
+
+  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
