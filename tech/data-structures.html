@@ -4,39 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Duomenų Struktūros</title>
-  <link rel="stylesheet" href="../final-styles.css" />
-  <script defer src="../script.js"></script>
+  <link rel="stylesheet" href="../jerimy-inspired-styles.css" />
   <link rel="icon" href="../favicon-dark.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-  <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <div class="cursor"></div>
+
   <nav class="main-nav">
-    <a href="../index.html">Pagrindinis</a>
-    <div class="dropdown">
+    <a href="../index.html">Ainius Pretkelaitis</a>
+    <div>
       <a href="../psychology/psychology.html">Psichologija</a>
-      <div class="dropdown-content">
-        <a href="../psychology/lenteles.html">Bendravimo Analizė</a>
-        <a href="../psychology/psychologists.html">Žymūs Psichologai</a>
-        <a href="../psychology/stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
-      </div>
-    </div>
-    <div class="dropdown">
       <a href="tech.html">Technologijos</a>
-      <div class="dropdown-content">
-        <a href="web-development-basics.html">Web Programavimo Pagrindai</a>
-        <a href="data-structures.html">Duomenų Struktūros</a>
-      </div>
     </div>
   </nav>
 
-  <div class="content">
-    <h1><i class="fas fa-database"></i> Duomenų Struktūros</h1>
-    <section class="card">
+  <main class="content">
+    <h1 class="reveal">Duomenų Struktūros</h1>
+    <section class="card reveal">
       <h2>Linijinės Duomenų Struktūros</h2>
       <p>Elementai išdėstyti nuosekliai, vienas po kito.</p>
       <ul>
@@ -46,7 +31,7 @@
         <li><strong>Eilės (Queues):</strong> "Pirmas į vidų, pirmas į išorę" (FIFO) principu veikianti struktūra.</li>
       </ul>
     </section>
-    <section class="card">
+    <section class="card reveal">
       <h2>Netiesinės Duomenų Struktūros</h2>
       <p>Elementai organizuojami hierarchiškai arba tinkliniu formatu.</p>
       <ul>
@@ -55,9 +40,39 @@
         <li><strong>Maišos Lentelės (Hash Tables):</strong> Raktų ir reikšmių porų saugojimo struktūra, leidžianti greitai pasiekti reikšmes pagal raktus.</li>
       </ul>
     </section>
-  </div>
+  </main>
 
-  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+  <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    });
 
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseover', () => {
+        cursor.classList.add('cursor-grow');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-grow');
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealOnScroll = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add("active");
+        } else {
+          revealElements[i].classList.remove("active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Initial check
+  </script>
 </body>
 </html>

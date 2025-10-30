@@ -4,42 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bendravimo analizė</title>
-  <link rel="stylesheet" href="../final-styles.css" />
-  <script defer src="../script.js"></script>
+  <link rel="stylesheet" href="../jerimy-inspired-styles.css" />
   <link rel="icon" href="../favicon-dark.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-  <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <div class="cursor"></div>
+
   <nav class="main-nav">
-    <a href="../index.html">Pagrindinis</a>
-    <div class="dropdown">
+    <a href="../index.html">Ainius Pretkelaitis</a>
+    <div>
       <a href="psychology.html">Psichologija</a>
-      <div class="dropdown-content">
-        <a href="lenteles.html">Bendravimo Analizė</a>
-        <a href="psychologists.html">Žymūs Psichologai</a>
-        <a href="stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
-      </div>
-    </div>
-    <div class="dropdown">
       <a href="../tech/tech.html">Technologijos</a>
-      <div class="dropdown-content">
-        <a href="../tech/web-development-basics.html">Web Programavimo Pagrindai</a>
-        <a href="../tech/data-structures.html">Duomenų Struktūros</a>
-      </div>
     </div>
   </nav>
 
-  <div class="content">
-    <h1><i class="fas fa-table"></i> Bendravimo Analizė</h1>
-    <input type="text" id="searchInput" placeholder="Ieškoti...">
+  <main class="content">
+    <h1 class="reveal">Bendravimo Analizė</h1>
 
-    <section class="card">
-      <h2><i class="fas fa-puzzle-piece"></i> Bendravimo proceso elementai</h2>
+    <section class="card reveal">
+      <h2>Bendravimo proceso elementai</h2>
       <table class="searchable">
         <thead>
           <tr><th>Elementas</th><th>Aprašymas</th><th>Pavyzdys</th></tr>
@@ -55,8 +39,8 @@
       </table>
     </section>
 
-    <section class="card">
-      <h2><i class="fas fa-star"></i> Bendravimo fenomenai</h2>
+    <section class="card reveal">
+      <h2>Bendravimo fenomenai</h2>
       <table class="searchable">
         <thead>
           <tr><th>Fenomenas</th><th>Aprašymas</th><th>Pavyzdys</th></tr>
@@ -71,9 +55,39 @@
         </tbody>
       </table>
     </section>
-  </div>
+  </main>
 
-  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+  <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    });
 
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseover', () => {
+        cursor.classList.add('cursor-grow');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-grow');
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealOnScroll = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add("active");
+        } else {
+          revealElements[i].classList.remove("active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Initial check
+  </script>
 </body>
 </html>

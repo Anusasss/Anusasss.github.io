@@ -4,55 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technologijų Skiltis</title>
-  <link rel="stylesheet" href="../final-styles.css" />
-  <script defer src="../script.js"></script>
+  <link rel="stylesheet" href="../jerimy-inspired-styles.css" />
   <link rel="icon" href="../favicon-dark.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-  <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+  <div class="cursor"></div>
+
   <nav class="main-nav">
-    <a href="../index.html">Pagrindinis</a>
-    <div class="dropdown">
+    <a href="../index.html">Ainius Pretkelaitis</a>
+    <div>
       <a href="../psychology/psychology.html">Psichologija</a>
-      <div class="dropdown-content">
-        <a href="../psychology/lenteles.html">Bendravimo Analizė</a>
-        <a href="../psychology/psychologists.html">Žymūs Psichologai</a>
-        <a href="../psychology/stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
-      </div>
-    </div>
-    <div class="dropdown">
       <a href="tech.html">Technologijos</a>
-      <div class="dropdown-content">
-        <a href="web-development-basics.html">Web Programavimo Pagrindai</a>
-        <a href="data-structures.html">Duomenų Struktūros</a>
-      </div>
     </div>
   </nav>
 
-  <div class="content">
-    <section class="hero-main">
-      <h1><i class="fas fa-code"></i> Technologijų Skiltis</h1>
-      <p>Čia rasite mano projektus, atradimus ir užrašus apie programavimą ir kompiuterių mokslą.</p>
-    </section>
+  <main class="content">
+    <h1 class="reveal">Technologijų Pasaulis</h1>
+    <div class="card reveal">
+      <h2><a href="web-development-basics.html">Web Programavimo Pagrindai</a></h2>
+      <p>HTML, CSS ir JavaScript pagrindai, reikalingi kuriant internetines svetaines.</p>
+    </div>
+    <div class="card reveal">
+      <h2><a href="data-structures.html">Duomenų Struktūros</a></h2>
+      <p>Pagrindinės duomenų struktūros, naudojamos programavime.</p>
+    </div>
+  </main>
 
-    <section class="card-grid">
-      <a href="web-development-basics.html" class="nav-card">
-        <h3><i class="fas fa-globe"></i> Web Programavimo Pagrindai</h3>
-        <p>HTML, CSS ir JavaScript pagrindai, reikalingi kuriant internetines svetaines.</p>
-      </a>
-      <a href="data-structures.html" class="nav-card">
-        <h3><i class="fas fa-database"></i> Duomenų Struktūros</h3>
-        <p>Pagrindinės duomenų struktūros, naudojamos programavime.</p>
-      </a>
-    </section>
-  </div>
+  <script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+    });
 
-  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseover', () => {
+        cursor.classList.add('cursor-grow');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-grow');
+      });
+    });
 
+    const revealElements = document.querySelectorAll(".reveal");
+    const revealOnScroll = () => {
+      for (let i = 0; i < revealElements.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = revealElements[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < windowHeight - elementVisible) {
+          revealElements[i].classList.add("active");
+        } else {
+          revealElements[i].classList.remove("active");
+        }
+      }
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Initial check
+  </script>
 </body>
 </html>
