@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technologijų Skiltis</title>
-  <link rel="stylesheet" href="../jerimy-inspired-styles.css" />
+  <link rel="stylesheet" href="../jerimy-brown-dark-styles.css" />
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
 </head>
@@ -33,8 +33,20 @@
 
   <script>
     const cursor = document.querySelector('.cursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.1; // Easing effect
+      cursorY += (mouseY - cursorY) * 0.1; // Easing effect
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+
     document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
 
     document.querySelectorAll('a, button').forEach(el => {
@@ -62,6 +74,7 @@
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); // Initial check
+    animateCursor(); // Start cursor animation
   </script>
 </body>
 </html>

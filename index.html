@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ainius Pretkelaitis - Asmeninė Svetainė</title>
-  <link rel="stylesheet" href="jerimy-inspired-styles.css" />
+  <link rel="stylesheet" href="jerimy-brown-dark-styles.css" />
   <link rel="icon" href="favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
 </head>
@@ -22,21 +22,25 @@
   <main>
     <section class="hero-main">
       <h1>Kūrybiškumas ir Technologijos</h1>
+      <p>Mano kelionė per psichologijos ir technologijų pasaulius.</p>
     </section>
 
     <section class="horizontal-scroll-section">
       <div class="horizontal-scroll-wrapper">
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technologijų Projektai">
           <h3>Technologijų Projektai</h3>
+          <p>Įvairūs programavimo ir technologijų projektai.</p>
         </div>
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1550537685-9b2a7c6f0b6e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+          <img src="https://images.unsplash.com/photo-1550537685-9b2a7c6f0b6e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Psichologijos Įžvalgos">
           <h3>Psichologijos Įžvalgos</h3>
+          <p>Analizės ir refleksijos iš psichologijos seminarų.</p>
         </div>
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
-          <h3>Portfolio 3</h3>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kiti Projektai">
+          <h3>Kiti Projektai</h3>
+          <p>Įvairūs asmeniniai ir akademiniai darbai.</p>
         </div>
       </div>
     </section>
@@ -44,8 +48,20 @@
 
   <script>
     const cursor = document.querySelector('.cursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.1; // Easing effect
+      cursorY += (mouseY - cursorY) * 0.1; // Easing effect
+      cursor.style.left = cursorX + 'px';
+      cursor.style.top = cursorY + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+
     document.addEventListener('mousemove', e => {
-      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
 
     document.querySelectorAll('a, button').forEach(el => {
@@ -73,6 +89,7 @@
 
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); // Initial check
+    animateCursor(); // Start cursor animation
   </script>
 </body>
 </html>
