@@ -4,30 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bendravimo analizė</title>
-  <link rel="stylesheet" href="../new-styles.css" />
+  <link rel="stylesheet" href="../final-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="section-container">
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
-          <li><a href="psychology.html"><i class="fas fa-brain"></i> Psichologija</a></li>
-          <li><a href="lenteles.html" class="active"><i class="fas fa-table"></i> Bendravimo Analizė</a></li>
-          <li><a href="psychologists.html"><i class="fas fa-users"></i> Žymūs Psichologai</a></li>
-          <li><a href="stanford-prison-experiment.html"><i class="fas fa-landmark"></i> Stanfordo Eksperimentas</a></li>
-          <li><a href="../tech/tech.html"><i class="fas fa-code"></i> Technologijos</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="content">
-      <h1><i class="fas fa-table"></i> Bendravimo Analizė</h1>
-      <input type="text" id="searchInput" placeholder="Ieškoti...">
+  <nav class="main-nav">
+    <a href="../index.html">Pagrindinis</a>
+    <div class="dropdown">
+      <a href="psychology.html">Psichologija</a>
+      <div class="dropdown-content">
+        <a href="lenteles.html">Bendravimo Analizė</a>
+        <a href="psychologists.html">Žymūs Psichologai</a>
+        <a href="stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="../tech/tech.html">Technologijos</a>
+      <div class="dropdown-content">
+        <a href="../tech/web-development-basics.html">Web Programavimo Pagrindai</a>
+        <a href="../tech/data-structures.html">Duomenų Struktūros</a>
+      </div>
+    </div>
+  </nav>
 
+  <div class="content">
+    <h1><i class="fas fa-table"></i> Bendravimo Analizė</h1>
+    <input type="text" id="searchInput" placeholder="Ieškoti...">
+
+    <section class="card">
       <h2><i class="fas fa-puzzle-piece"></i> Bendravimo proceso elementai</h2>
       <table class="searchable">
         <thead>
@@ -42,7 +49,9 @@
           <tr><td>Triukšmas</td><td>Trukdžiai komunikacijai</td><td>Triukšmas iš koridoriaus</td></tr>
         </tbody>
       </table>
+    </section>
 
+    <section class="card">
       <h2><i class="fas fa-star"></i> Bendravimo fenomenai</h2>
       <table class="searchable">
         <thead>
@@ -57,7 +66,7 @@
           <tr><td>Kultūriniai skirtumai</td><td>Skirtingi komunikacijos stiliai</td><td>Užsienio studento interpretacija</td></tr>
         </tbody>
       </table>
-    </main>
+    </section>
   </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>

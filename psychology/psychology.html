@@ -4,47 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Psichologijos Skiltis</title>
-  <link rel="stylesheet" href="../new-styles.css" />
+  <link rel="stylesheet" href="../final-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="section-container">
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
-          <li><a href="psychology.html" class="active"><i class="fas fa-brain"></i> Psichologija</a></li>
-          <li><a href="lenteles.html"><i class="fas fa-table"></i> Bendravimo Analizė</a></li>
-          <li><a href="psychologists.html"><i class="fas fa-users"></i> Žymūs Psichologai</a></li>
-          <li><a href="stanford-prison-experiment.html"><i class="fas fa-landmark"></i> Stanfordo Eksperimentas</a></li>
-          <li><a href="../tech/tech.html"><i class="fas fa-code"></i> Technologijos</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="content">
-      <section class="hero-main">
-        <h1><i class="fas fa-brain"></i> Psichologijos Skiltis</h1>
-        <p>Čia rasite mano surinktą informaciją, analizes ir refleksijas apie psichologiją.</p>
-      </section>
+  <nav class="main-nav">
+    <a href="../index.html">Pagrindinis</a>
+    <div class="dropdown">
+      <a href="psychology.html">Psichologija</a>
+      <div class="dropdown-content">
+        <a href="lenteles.html">Bendravimo Analizė</a>
+        <a href="psychologists.html">Žymūs Psichologai</a>
+        <a href="stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="../tech/tech.html">Technologijos</a>
+      <div class="dropdown-content">
+        <a href="../tech/web-development-basics.html">Web Programavimo Pagrindai</a>
+        <a href="../tech/data-structures.html">Duomenų Struktūros</a>
+      </div>
+    </div>
+  </nav>
 
-      <section class="card-grid">
-        <a href="lenteles.html" class="nav-card">
-          <h3><i class="fas fa-table"></i> Bendravimo Analizė</h3>
-          <p>Interaktyvios lentelės, skirtos analizuoti bendravimo procesus ir fenomenus.</p>
-        </a>
-        <a href="psychologists.html" class="nav-card">
-          <h3><i class="fas fa-users"></i> Žymūs Psichologai</h3>
-          <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais.</p>
-        </a>
-        <a href="stanford-prison-experiment.html" class="nav-card">
-          <h3><i class="fas fa-landmark"></i> Stanfordo Kalėjimo Eksperimentas</h3>
-          <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
-        </a>
-      </section>
-    </main>
+  <div class="content">
+    <section class="hero-main">
+      <h1><i class="fas fa-brain"></i> Psichologijos Skiltis</h1>
+      <p>Čia rasite mano surinktą informaciją, analizes ir refleksijas apie psichologiją.</p>
+    </section>
+
+    <section class="card-grid">
+      <a href="lenteles.html" class="nav-card">
+        <h3><i class="fas fa-table"></i> Bendravimo Analizė</h3>
+        <p>Interaktyvios lentelės, skirtos analizuoti bendravimo procesus ir fenomenus.</p>
+      </a>
+      <a href="psychologists.html" class="nav-card">
+        <h3><i class="fas fa-users"></i> Žymūs Psichologai</h3>
+        <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais.</p>
+      </a>
+      <a href="stanford-prison-experiment.html" class="nav-card">
+        <h3><i class="fas fa-landmark"></i> Stanfordo Kalėjimo Eksperimentas</h3>
+        <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
+      </a>
+    </section>
   </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>

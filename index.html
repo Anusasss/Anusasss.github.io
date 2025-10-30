@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ainius Pretkelaitis - Asmeninė Svetainė</title>
-  <link rel="stylesheet" href="new-styles.css" />
+  <link rel="stylesheet" href="final-styles.css" />
   <script defer src="script.js"></script>
   <link rel="icon" href="favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
@@ -13,32 +13,38 @@
 <body>
   <canvas id="cool-canvas"></canvas>
 
+  <nav class="main-nav">
+    <a href="index.html">Pagrindinis</a>
+    <div class="dropdown">
+      <a href="psychology/psychology.html">Psichologija</a>
+      <div class="dropdown-content">
+        <a href="psychology/lenteles.html">Bendravimo Analizė</a>
+        <a href="psychology/psychologists.html">Žymūs Psichologai</a>
+        <a href="psychology/stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="tech/tech.html">Technologijos</a>
+      <div class="dropdown-content">
+        <a href="tech/web-development-basics.html">Web Programavimo Pagrindai</a>
+        <a href="tech/data-structures.html">Duomenų Struktūros</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="main-container">
     <header class="hero-main">
       <h1>Ainius Pretkelaitis</h1>
       <p>Sveiki atvykę į mano asmeninę erdvę! Čia aš dalinuosi savo kelione mokantis psichologijos ir technologijų pasaulių.</p>
     </header>
 
-    <nav class="main-nav">
-      <a href="psychology/psychology.html" class="nav-card">
-        <i class="fas fa-brain"></i>
-        <h2>Psichologija</h2>
-        <p>Mano užrašai, analizės ir įžvalgos iš psichologijos pasaulio.</p>
-      </a>
-      <a href="tech/tech.html" class="nav-card">
-        <i class="fas fa-code"></i>
-        <h2>Technologijos</h2>
-        <p>Mano projektai, atradimai ir užrašai apie programavimą ir kompiuterių mokslą.</p>
-      </a>
-    </nav>
-
     <section id="portfolio" class="portfolio-section">
       <h2><i class="fas fa-briefcase"></i> Portfolio</h2>
-      <div class="portfolio-item">
+      <div class="card">
         <h3>Projektas 1</h3>
         <p>Projekto aprašymas...</p>
       </div>
-      <div class="portfolio-item">
+      <div class="card">
         <h3>Projektas 2</h3>
         <p>Projekto aprašymas...</p>
       </div>

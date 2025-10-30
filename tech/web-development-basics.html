@@ -4,55 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web Programavimo Pagrindai</title>
-  <link rel="stylesheet" href="../new-styles.css" />
+  <link rel="stylesheet" href="../final-styles.css" />
   <script defer src="../script.js"></script>
   <link rel="icon" href="../favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="section-container">
-    <aside class="sidebar">
-      <nav>
-        <ul>
-          <li><a href="../index.html"><i class="fas fa-home"></i> Pagrindinis</a></li>
-          <li><a href="../psychology/psychology.html"><i class="fas fa-brain"></i> Psichologija</a></li>
-          <li><a href="tech.html"><i class="fas fa-code"></i> Technologijos</a></li>
-          <li><a href="web-development-basics.html" class="active"><i class="fas fa-globe"></i> Web Programavimo Pagrindai</a></li>
-          <li><a href="data-structures.html"><i class="fas fa-database"></i> Duomenų Struktūros</a></li>
-        </ul>
-      </nav>
-    </aside>
-    <main class="content">
-      <h1><i class="fas fa-globe"></i> Web Programavimo Pagrindai</h1>
-      <section class="card">
-        <h2>Frontend (Vartotojo Sąsaja)</h2>
-        <p>Tai, ką vartotojas mato ir su kuo sąveikauja naršyklėje.</p>
-        <ul>
-          <li><strong>HTML (HyperText Markup Language):</strong> Standartinė žymėjimo kalba, skirta kurti internetinius puslapius. Ji suteikia puslapio struktūrą ir turinį.</li>
-          <li><strong>CSS (Cascading Style Sheets):</strong> Naudojama aprašyti HTML dokumento pateikimą. Ji valdo išdėstymą, spalvas, šriftus ir bendrą vizualinę išvaizdą.</li>
-          <li><strong>JavaScript:</strong> Programavimo kalba, kuri leidžia kurti interaktyvius internetinius puslapius. Ji leidžia dinamiškai keisti turinį, kurti animacijas, tikrinti formas ir dar daugiau.</li>
-        </ul>
-      </section>
-      <section class="card">
-        <h2>Backend (Serverio Dalis)</h2>
-        <p>Tai, kas valdo logiką, duomenų bazes ir serverio operacijas, kurios maitina vartotojo sąsają.</p>
-        <ul>
-          <li><strong>Programavimo Kalbos:</strong> Pvz., Python, Node.js, PHP, Ruby, Java. Naudojamos rašyti serverio logiką.</li>
-          <li><strong>Duomenų Bazės:</strong> Pvz., SQL, MongoDB. Naudojamos saugoti ir valdyti programos duomenis.</li>
-          <li><strong>API (Application Programming Interfaces):</strong> Leidžia skirtingoms programinės įrangos sistemoms bendrauti tarpusavyje.</li>
-        </ul>
-      </section>
-      <section class="card">
-        <h2>Kiti Svarbūs Konceptai</h2>
-        <ul>
-          <li><strong>Web Serveriai:</strong> Pvz., Apache, Nginx. Programinė įranga, kuri saugo svetainės failus ir juos pateikia vartotojų naršyklėms.</li>
-          <li><strong>Versijų Kontrolė:</strong> Pvz., Git/GitHub. Būtina sekti kodo pakeitimus, bendradarbiauti su kitais ir valdyti skirtingas projekto versijas.</li>
-          <li><strong>Diegimas (Deployment):</strong> Procesas, kurio metu internetinė programa tampa prieinama vartotojams internete.</li>
-          <li><strong>Responsinis Dizainas:</strong> Užtikrinimas, kad svetainės atrodytų ir veiktų gerai įvairiuose įrenginiuose ir ekrano dydžiuose.</li>
-        </ul>
-      </section>
-    </main>
+  <nav class="main-nav">
+    <a href="../index.html">Pagrindinis</a>
+    <div class="dropdown">
+      <a href="../psychology/psychology.html">Psichologija</a>
+      <div class="dropdown-content">
+        <a href="../psychology/lenteles.html">Bendravimo Analizė</a>
+        <a href="../psychology/psychologists.html">Žymūs Psichologai</a>
+        <a href="../psychology/stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="tech.html">Technologijos</a>
+      <div class="dropdown-content">
+        <a href="web-development-basics.html">Web Programavimo Pagrindai</a>
+        <a href="data-structures.html">Duomenų Struktūros</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1><i class="fas fa-globe"></i> Web Programavimo Pagrindai</h1>
+    <section class="card">
+      <h2>Frontend (Vartotojo Sąsaja)</h2>
+      <p>Tai, ką vartotojas mato ir su kuo sąveikauja naršyklėje.</p>
+      <ul>
+        <li><strong>HTML (HyperText Markup Language):</strong> Standartinė žymėjimo kalba, skirta kurti internetinius puslapius. Ji suteikia puslapio struktūrą ir turinį.</li>
+        <li><strong>CSS (Cascading Style Sheets):</strong> Naudojama aprašyti HTML dokumento pateikimą. Ji valdo išdėstymą, spalvas, šriftus ir bendrą vizualinę išvaizdą.</li>
+        <li><strong>JavaScript:</strong> Programavimo kalba, kuri leidžia kurti interaktyvius internetinius puslapius. Ji leidžia dinamiškai keisti turinį, kurti animacijas, tikrinti formas ir dar daugiau.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Backend (Serverio Dalis)</h2>
+      <p>Tai, kas valdo logiką, duomenų bazes ir serverio operacijas, kurios maitina vartotojo sąsają.</p>
+      <ul>
+        <li><strong>Programavimo Kalbos:</strong> Pvz., Python, Node.js, PHP, Ruby, Java. Naudojamos rašyti serverio logiką.</li>
+        <li><strong>Duomenų Bazės:</strong> Pvz., SQL, MongoDB. Naudojamos saugoti ir valdyti programos duomenis.</li>
+        <li><strong>API (Application Programming Interfaces):</strong> Leidžia skirtingoms programinės įrangos sistemoms bendrauti tarpusavyje.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Kiti Svarbūs Konceptai</h2>
+      <ul>
+        <li><strong>Web Serveriai:</strong> Pvz., Apache, Nginx. Programinė įranga, kuri saugo svetainės failus ir juos pateikia vartotojų naršyklėms.</li>
+        <li><strong>Versijų Kontrolė:</strong> Pvz., Git/GitHub. Būtina sekti kodo pakeitimus, bendradarbiauti su kitais ir valdyti skirtingas projekto versijas.</li>
+        <li><strong>Diegimas (Deployment):</strong> Procesas, kurio metu internetinė programa tampa prieinama vartotojams internete.</li>
+        <li><strong>Responsinis Dizainas:</strong> Užtikrinimas, kad svetainės atrodytų ir veiktų gerai įvairiuose įrenginiuose ir ekrano dydžiuose.</li>
+      </ul>
+    </section>
   </div>
 
   <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
