@@ -83,22 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateClock, 1000);
   updateClock();
 
-  // 💡 Tech quote generator
-  const quotes = [
-    "“Programs must be written for people to read.” – Harold Abelson",
-    "“Talk is cheap. Show me the code.” – Linus Torvalds",
-    "“The best way to predict the future is to invent it.” – Alan Kay",
-    "“Code is like humor. When you have to explain it, it’s bad.” – Cory House",
-    "“Simplicity is the soul of efficiency.” – Austin Freeman"
-  ];
-  function rotateQuote() {
-    if (quoteBox) {
-      const quote = quotes[Math.floor(Math.random() * quotes.length)];
-      quoteBox.innerHTML = `<h2>💡 Tech Mintis</h2><p>${quote}</p>`;
-    }
-  }
-  setInterval(rotateQuote, 10000);
-  rotateQuote();
+
 
   // 🎮 Keyboard shortcuts
   document.addEventListener("keydown", (e) => {
