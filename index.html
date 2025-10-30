@@ -26,8 +26,9 @@
 
   <main>
     <section class="hero-main">
-      <h1>Kūrybiškumas ir Technologijos</h1>
-      <p>Mano kelionė per psichologijos ir technologijų pasaulius.</p>
+      <h1><span class="word-animation">Kūrybiškumas</span> <span class="word-animation">ir</span> <span class="word-animation">Technologijos</span></h1>
+      <p class="text-animation">Mano kelionė per psichologijos ir technologijų pasaulius.</p>
+      <div class="scroll-down-indicator"><i class="fas fa-chevron-down"></i></div>
     </section>
 
     <section class="horizontal-scroll-section">
@@ -160,6 +161,50 @@
       } else {
         mainNav.classList.remove('scrolled');
       }
+    });
+
+    // Hero Text Animation
+    const heroTitle = document.querySelector('.hero-main h1');
+    const heroParagraph = document.querySelector('.hero-main p');
+
+    const animateHeroText = () => {
+      const words = heroTitle.querySelectorAll('.word-animation');
+      words.forEach((word, index) => {
+        word.style.opacity = '0';
+        word.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          word.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+          word.style.opacity = '1';
+          word.style.transform = 'translateY(0)';
+        }, index * 150); // Stagger animation
+      });
+
+      heroParagraph.style.opacity = '0';
+      heroParagraph.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        heroParagraph.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        heroParagraph.style.opacity = '1';
+        heroParagraph.style.transform = 'translateY(0)';
+      }, words.length * 150 + 300); // Animate after words
+    };
+
+    // Trigger animation when hero section is in view
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateHeroText();
+          heroObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    heroObserver.observe(heroTitle);
+
+    // Image lazy loading with fade-in
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
     });
   </script>
 </body>
