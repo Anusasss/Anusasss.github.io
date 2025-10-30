@@ -112,28 +112,3 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("%cSveikas, tech entuziaste! 👨‍💻", "color: gold; font-size: 16px; font-weight: bold;");
   console.log("Ši svetainė sukurta su meile ir JavaScript. Naršyk, tyrinėk, tobulėk.");
 });
-
-// 🧮 Calculator logic
-let calcExpression = "";
-
-function appendCalc(val) {
-  if (calcExpression === "0") calcExpression = "";
-  calcExpression += val;
-  document.getElementById("calcDisplay").innerText = calcExpression;
-}
-
-function clearCalc() {
-  calcExpression = "";
-  document.getElementById("calcDisplay").innerText = "0";
-}
-
-function calculateCalc() {
-  try {
-    const result = eval(calcExpression);
-    calcExpression = result.toString();
-    document.getElementById("calcDisplay").innerText = calcExpression;
-  } catch {
-    document.getElementById("calcDisplay").innerText = "Error";
-    calcExpression = "";
-  }
-}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Žymūs Psichologai</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link rel="icon" href="favicon-dark.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-brain"></i> Refleksijos</a></div>
+    <div class="nav-buttons">
+      <button onclick="location.href='index.html'">Titulinis</button>
+      <button onclick="location.href='lenteles.html'">Lentelės</button>
+      <button onclick="location.href='psychologists.html'" class="active">Psichologai</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero card glass" data-aos="fade-up">
+      <h1><i class="fas fa-users"></i> Žymūs Psichologai</h1>
+      <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais, kurie formavo šiuolaikinę psichologiją.</p>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="200">
+      <h2>Sigmund Freud</h2>
+      <p><strong>Psichoanalizės tėvas.</strong> Freud pristatė pasąmonės koncepciją, teigdamas, kad mūsų elgesį veikia paslėptos mintys ir troškimai. Jis taip pat pabrėžė sapnų svarbą kaip langą į šį paslėptą pasaulį.</p>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="400">
+      <h2>Ivan Pavlov</h2>
+      <p><strong>Klasikinio sąlygojimo teorija.</strong> Rusų fiziologas, žinomas dėl savo eksperimentų su šunimis. Jis parodė, kaip organizmai gali būti išmokyti reaguoti į stimulus per asociacijas, o tai turėjo didelės įtakos biheviorizmui.</p>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="600">
+      <h2>B.F. Skinner</h2>
+      <p><strong>Operantinio sąlygojimo teorija.</strong> Skinneris teigė, kad elgesį formuoja atlygis ir bausmės. Jo darbai parodė, kaip aplinka veikia elgesį ir mokymąsi.</p>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="800">
+      <h2>Jean Piaget</h2>
+      <p><strong>Kognityvinės raidos teorija.</strong> Šveicarų psichologas, kuris tyrinėjo vaikų kognityvinę raidą. Jis nustatė skirtingus intelektualinio vystymosi etapus nuo kūdikystės iki paauglystės, darydamas didelę įtaką švietimui.</p>
+    </section>
+
+    <section class="card glass" data-aos="fade-up" data-aos-delay="1000">
+      <h2>Carl Rogers</h2>
+      <p><strong>Humanistinė psichologija.</strong> Rogers pristatė savęs aktualizacijos ir asmeninio augimo koncepcijas. Jo į klientą orientuota terapija pabrėžė palankios aplinkos kūrimą, kurioje individai galėtų tyrinėti savo mintis ir jausmus.</p>
+    </section>
+  </main>
+
+  <div id="clockWidget" class="card glass clock-widget"></div>
+  <button id="themeToggle" class="theme-toggle" title="Perjungti temą">🌓</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init({ duration: 1000 });</script>
+</body>
+</html>
