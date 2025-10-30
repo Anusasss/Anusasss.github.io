@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="jerimy-brown-dark-styles.css" />
   <link rel="icon" href="favicon-dark.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
   <div class="cursor"></div>
+  <div id="scroll-indicator"></div>
 
   <nav class="main-nav">
     <a href="index.html">Ainius Pretkelaitis</a>
@@ -28,32 +33,56 @@
     <section class="horizontal-scroll-section">
       <div class="horizontal-scroll-wrapper">
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technologijų Projektai">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Technologijų Projektai" loading="lazy">
           <h3>Technologijų Projektai</h3>
           <p>Įvairūs programavimo ir technologijų projektai.</p>
         </div>
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1550537685-9b2a7c6f0b6e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Psichologijos Įžvalgos">
+          <img src="https://images.unsplash.com/photo-1550537685-9b2a7c6f0b6e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Psichologijos Įžvalgos" loading="lazy">
           <h3>Psichologijos Įžvalgos</h3>
           <p>Analizės ir refleksijos iš psichologijos seminarų.</p>
         </div>
         <div class="portfolio-item reveal">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kiti Projektai">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kiti Projektai" loading="lazy">
           <h3>Kiti Projektai</h3>
           <p>Įvairūs asmeniniai ir akademiniai darbai.</p>
         </div>
       </div>
     </section>
+
+    <section class="contact-section reveal">
+      <h2>Susisiekite</h2>
+      <form>
+        <input type="text" placeholder="Vardas" required>
+        <input type="email" placeholder="El. paštas" required>
+        <textarea placeholder="Jūsų žinutė" rows="5" required></textarea>
+        <button type="submit">Siųsti</button>
+      </form>
+    </section>
   </main>
 
+  <button id="back-to-top" title="Grįžti į viršų"><i class="fas fa-arrow-up"></i></button>
+
   <script>
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      }
+    });
+
+    // Custom Cursor
     const cursor = document.querySelector('.cursor');
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
     function animateCursor() {
-      cursorX += (mouseX - cursorX) * 0.1; // Easing effect
-      cursorY += (mouseY - cursorY) * 0.1; // Easing effect
+      cursorX += (mouseX - cursorX) * 0.15; // Easing effect
+      cursorY += (mouseY - cursorY) * 0.15; // Easing effect
       cursor.style.left = cursorX + 'px';
       cursor.style.top = cursorY + 'px';
       requestAnimationFrame(animateCursor);
@@ -64,7 +93,7 @@
       mouseY = e.clientY;
     });
 
-    document.querySelectorAll('a, button').forEach(el => {
+    document.querySelectorAll('a, button, .portfolio-item').forEach(el => {
       el.addEventListener('mouseover', () => {
         cursor.classList.add('cursor-grow');
       });
@@ -73,6 +102,7 @@
       });
     });
 
+    // On-scroll Animations
     const revealElements = document.querySelectorAll(".reveal");
     const revealOnScroll = () => {
       for (let i = 0; i < revealElements.length; i++) {
@@ -90,6 +120,29 @@
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); // Initial check
     animateCursor(); // Start cursor animation
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Scroll Indicator
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scrollTop / scrollHeight) * 100;
+      scrollIndicator.style.width = scrolled + '%';
+    });
   </script>
 </body>
 </html>
