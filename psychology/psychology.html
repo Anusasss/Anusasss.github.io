@@ -26,6 +26,7 @@
         <a href="stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
         <a href="cognitive-psychology.html">Kognityvinė Psichologija</a>
         <a href="social-psychology.html">Socialinė Psichologija</a>
+        <a href="developmental-psychology.html">Raidos Psichologija</a>
       </div>
       <a href="../tech/tech.html">Technologijos</a>
       <div class="dropdown-content">
@@ -33,6 +34,7 @@
         <a href="../tech/data-structures.html">Duomenų Struktūros</a>
         <a href="../tech/programming-paradigms.html">Programavimo Paradigmos</a>
         <a href="../tech/networking-fundamentals.html">Tinklų Pagrindai</a>
+        <a href="../tech/cybersecurity-basics.html">Kibernetinio Saugumo Pagrindai</a>
       </div>
     </div>
   </nav>
@@ -58,6 +60,10 @@
     <div class="card reveal">
       <h2><a href="social-psychology.html">Socialinė Psichologija</a></h2>
       <p>Konformizmo ir paklusnumo autoritetui analizė.</p>
+    </div>
+    <div class="card reveal">
+      <h2><a href="developmental-psychology.html">Raidos Psichologija</a></h2>
+      <p>Žmogaus vystymasis nuo vaikystės iki senatvės.</p>
     </div>
   </main>
 
@@ -160,6 +166,20 @@
       } else {
         mainNav.classList.remove('scrolled');
       }
+    });
+
+    // Page Transitions
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#') === false) {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
+      });
     });
   </script>
 </body>

@@ -26,6 +26,7 @@
         <a href="psychology/stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
         <a href="psychology/cognitive-psychology.html">Kognityvinė Psichologija</a>
         <a href="psychology/social-psychology.html">Socialinė Psichologija</a>
+        <a href="psychology/developmental-psychology.html">Raidos Psichologija</a>
       </div>
     </div>
     <div class="dropdown">
@@ -35,6 +36,7 @@
         <a href="tech/data-structures.html">Duomenų Struktūros</a>
         <a href="tech/programming-paradigms.html">Programavimo Paradigmos</a>
         <a href="tech/networking-fundamentals.html">Tinklų Pagrindai</a>
+        <a href="tech/cybersecurity-basics.html">Kibernetinio Saugumo Pagrindai</a>
       </div>
     </div>
   </nav>
@@ -219,6 +221,40 @@
     document.querySelectorAll('img[loading="lazy"]').forEach(img => {
       img.addEventListener('load', () => {
         img.classList.add('loaded');
+      });
+    });
+
+    // 3D Tilt Effect
+    const tiltElements = document.querySelectorAll(".portfolio-item, .card");
+
+    tiltElements.forEach(el => {
+      el.addEventListener("mousemove", (e) => {
+        const { left, top, width, height } = el.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+
+        const rotateX = y * -10; // Adjust multiplier for more/less tilt
+        const rotateY = x * 10;
+
+        el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+      });
+
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+      });
+    });
+
+    // Page Transitions
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#') === false) {
+          e.preventDefault();
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        }
       });
     });
   </script>
