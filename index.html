@@ -308,6 +308,14 @@
     menuButton.addEventListener('click', () => {
       megaMenu.classList.toggle('active');
     });
+
+    // 3D Hero Object
+    const heroObject = document.querySelector('.hero-object');
+    document.addEventListener('mousemove', (e) => {
+      const rotateX = (e.clientY / window.innerHeight - 0.5) * -30;
+      const rotateY = (e.clientX / window.innerWidth - 0.5) * 30;
+      heroObject.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
   </script>
 </body>
 </html>
