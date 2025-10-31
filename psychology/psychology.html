@@ -16,11 +16,12 @@
   <div class="cursor"></div>
   <div id="scroll-indicator"></div>
 
-  <nav class="main-nav">
-    <a href="../index.html">Ainius Pretkelaitis</a>
-    <div>
-      <a href="psychology.html">Psichologija</a>
-      <div class="dropdown-content">
+  <button class="menu-button"><i class="fas fa-bars"></i></button>
+
+  <div class="mega-menu">
+    <div class="mega-menu-content">
+      <div class="mega-menu-column">
+        <h3><a href="psychology.html">Psichologija</a></h3>
         <a href="lenteles.html">Bendravimo Analizė</a>
         <a href="psychologists.html">Žymūs Psichologai</a>
         <a href="stanford-prison-experiment.html">Stanfordo Eksperimentas</a>
@@ -28,48 +29,56 @@
         <a href="social-psychology.html">Socialinė Psichologija</a>
         <a href="developmental-psychology.html">Raidos Psichologija</a>
         <a href="clinical-psychology.html">Klinikinė Psichologija</a>
+        <a href="anxiety-disorders.html">Nerimo Sutrikimai</a>
       </div>
-      <a href="../tech/tech.html">Technologijos</a>
-      <div class="dropdown-content">
+      <div class="mega-menu-column">
+        <h3><a href="../tech/tech.html">Technologijos</a></h3>
         <a href="../tech/web-development-basics.html">Web Programavimo Pagrindai</a>
         <a href="../tech/data-structures.html">Duomenų Struktūros</a>
         <a href="../tech/programming-paradigms.html">Programavimo Paradigmos</a>
         <a href="../tech/networking-fundamentals.html">Tinklų Pagrindai</a>
         <a href="../tech/cybersecurity-basics.html">Kibernetinio Saugumo Pagrindai</a>
         <a href="../tech/ai-ml.html">Dirbtinis Intelektas ir Mašininis Mokymasis</a>
+        <a href="../tech/blockchain-crypto.html">Blockchain ir Kriptovaliutos</a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <main class="content">
     <h1 class="reveal">Psichologijos Įžvalgos</h1>
-    <div class="card reveal">
-      <h2><a href="lenteles.html">Bendravimo Analizė</a></h2>
-      <p>Interaktyvios lentelės, skirtos analizuoti bendravimo procesus ir fenomenus.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="psychologists.html">Žymūs Psichologai</a></h2>
-      <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="stanford-prison-experiment.html">Stanfordo Kalėjimo Eksperimentas</a></h2>
-      <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="cognitive-psychology.html">Kognityvinė Psichologija</a></h2>
-      <p>Atminties ir suvokimo pagrindai.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="social-psychology.html">Socialinė Psichologija</a></h2>
-      <p>Konformizmo ir paklusnumo autoritetui analizė.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="developmental-psychology.html">Raidos Psichologija</a></h2>
-      <p>Žmogaus vystymasis nuo vaikystės iki senatvės.</p>
-    </div>
-    <div class="card reveal">
-      <h2><a href="clinical-psychology.html">Klinikinė Psichologija</a></h2>
-      <p>Psichikos sutrikimų diagnostika ir gydymas.</p>
+    <div class="content-hub-grid">
+      <div class="card reveal">
+        <h2><a href="lenteles.html">Bendravimo Analizė</a></h2>
+        <p>Interaktyvios lentelės, skirtos analizuoti bendravimo procesus ir fenomenus.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="psychologists.html">Žymūs Psichologai</a></h2>
+        <p>Susipažinkite su įtakingiausių psichologų idėjomis ir darbais.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="stanford-prison-experiment.html">Stanfordo Kalėjimo Eksperimentas</a></h2>
+        <p>Išsami kontroversiško psichologinio tyrimo analizė.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="cognitive-psychology.html">Kognityvinė Psichologija</a></h2>
+        <p>Atminties ir suvokimo pagrindai.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="social-psychology.html">Socialinė Psichologija</a></h2>
+        <p>Konformizmo ir paklusnumo autoritetui analizė.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="developmental-psychology.html">Raidos Psichologija</a></h2>
+        <p>Žmogaus vystymasis nuo vaikystės iki senatvės.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="clinical-psychology.html">Klinikinė Psichologija</a></h2>
+        <p>Psichikos sutrikimų diagnostika ir gydymas.</p>
+      </div>
+      <div class="card reveal">
+        <h2><a href="anxiety-disorders.html">Nerimo Sutrikimai</a></h2>
+        <p>Gilesnis žvilgsnis į nerimo sutrikimus.</p>
+      </div>
     </div>
   </main>
 
@@ -186,6 +195,14 @@
           }, 500);
         }
       });
+    });
+
+    // Mega Menu
+    const menuButton = document.querySelector('.menu-button');
+    const megaMenu = document.querySelector('.mega-menu');
+
+    menuButton.addEventListener('click', () => {
+      megaMenu.classList.toggle('active');
     });
   </script>
 </body>

@@ -117,56 +117,63 @@ body::before {
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-/* Navigation */
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 3rem;
-  position: fixed; 
+/* Mega Menu */
+.menu-button {
+  position: fixed;
+  top: 1.5rem;
+  right: 3rem;
+  z-index: 1001;
+  cursor: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.mega-menu {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; 
+  height: 100%;
+  background-color: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(10px);
   z-index: 1000;
-  border-bottom: 1px solid transparent; 
-  transition: padding 0.4s ease, background-color 0.4s ease, border-bottom 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.main-nav.scrolled {
-  padding: 1rem 3rem;
-  background-color: rgba(5, 5, 5, 0.98); /* Almost opaque when scrolled */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+.mega-menu.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.main-nav a {
+.mega-menu-content {
+  display: flex;
+  gap: 4rem;
+}
+
+.mega-menu-column h3 {
+  font-family: var(--primary-font);
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.mega-menu-column a {
+  display: block;
   color: var(--text-color);
   text-decoration: none;
   font-size: 1.2rem;
-  font-family: var(--primary-font);
-  font-weight: 700;
-  margin: 0 1.2rem;
-  position: relative;
+  margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  bottom: -8px;
-  left: 0;
-  background-color: var(--accent-color);
-  transition: width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-.main-nav a:hover::after {
-  width: 100%;
-}
-
-.main-nav a:hover {
+.mega-menu-column a:hover {
   color: var(--accent-color);
 }
 
@@ -236,73 +243,43 @@ body::before {
   60% { transform: translateY(-10px); }
 }
 
-/* Horizontal Scroll Section */
-.horizontal-scroll-section {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 5rem 0;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* 3D Hero Object */
+.hero-object {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate3d 20s infinite linear;
 }
 
-.horizontal-scroll-section::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+.hero-object-face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--accent-color);
+  background-color: rgba(0, 230, 255, 0.1);
+  box-shadow: 0 0 20px var(--accent-color);
 }
 
-.horizontal-scroll-wrapper {
-  display: inline-flex;
-  padding-left: 3rem;
+.front  { transform: translateZ(100px); }
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes rotate3d {
+  0% { transform: rotateX(0) rotateY(0); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-.portfolio-item {
-  flex: 0 0 520px; /* Even larger items */
-  margin-right: 3.5rem;
-  white-space: normal;
-  background-color: var(--dark-grey-1);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
-  opacity: 0;
-  transform: translateY(50px);
-  border: 1px solid rgba(255, 255, 255, 0.15); /* More visible subtle border */
-  transform-style: preserve-3d; /* For 3D tilt effect */
-}
-
-.portfolio-item:hover {
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
-  border-color: var(--accent-color); /* Border lights up on hover */
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: 320px; /* Even larger images */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1.8rem;
-  opacity: 0;
-  filter: blur(8px);
-  transition: opacity 0.8s ease, filter 0.8s ease;
-}
-
-.portfolio-item img.loaded {
-  opacity: 1;
-  filter: blur(0);
-}
-
-.portfolio-item h3 {
-  font-family: var(--primary-font);
-  font-size: 2.4rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.portfolio-item p {
-  color: var(--secondary-text-color);
-  font-size: 1.15rem;
+/* Content Hub Layout */
+.content-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 /* Content Pages */
@@ -510,51 +487,6 @@ body::before {
   transform: translateY(-5px);
 }
 
-/* Scrollytelling */
-.scrollytelling-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
-  padding: 8rem 3rem;
-  min-height: 100vh;
-}
-
-.scrollytelling-text {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.scrollytelling-text.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.scrollytelling-visual {
-  position: relative;
-  height: 500px; /* Adjust as needed */
-}
-
-.scrollytelling-visual .visual-element {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.scrollytelling-visual .visual-element.active {
-  opacity: 1;
-  transform: scale(1);
-}
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .main-nav {
@@ -604,9 +536,5 @@ body::before {
     right: 30px;
     padding: 15px 18px;
     font-size: 1.2rem;
-  }
-
-  .scrollytelling-section {
-    grid-template-columns: 1fr;
   }
 }
