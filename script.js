@@ -1,30 +1,31 @@
 // ==========================================
-// 1. DATA STRUCTURE (Updated with Stories & Layout Fixes)
+// 1. DATA STRUCTURE (Centralized & Scalable)
 // ==========================================
 const familyData = [
     // --- Lygis 0 ---
     { id: 1, name: "Aš", parentId: null, status: "alive", about: "Medžio šaknys.", level: 0 },
-    // Elvyros ilga istorija
+    // Elvyros atnaujinta istorija
     {
-        id: 10, name: "Elvyra", parentId: 8, status: "migrated", level: 0, about: `Elvyra, Silvos dukra, atstovauja jau kitai migracijos bangos kartai. Jos vaikystė ir paauglystė prabėgo Lietuvoje, kur ji spėjo sugerti gimtosios kalbos ir kultūros pagrindus. Tačiau mamos priimtas sprendimas ir praskintas kelias į Didžiąją Britaniją lėmė ir tolesnį Elvyros likimą. Vos sulaukusi aštuoniolikos metų ir sėkmingai baigusi dvylika klasių, mergina susikrovė lagaminus ir išvyko pas mamą, palikdama Lietuvą ne tik kaip geografinę vietą, bet ir kaip užnugarį, į kurį visada galės sugrįžti bent mintimis.
+        id: 10, name: "Elvyra", parentId: 8, status: "migrated", level: 0, about: `Elvyros istorija: gyvenimas Britanijoje nepamirštant Lietuvos
 
-Didžiojoje Britanijoje Elvyra ne tik pritapo, bet ir susikūrė visą savo gyvenimą – ten ji gyvena iki šiol. Jos istorija išsiskiria tuo, kad net ir visiškai integravusis į britišką visuomenę, jos širdyje Lietuva užima pamatinę vietą. Elvyra sukūrė didelę šeimą – ji augina net septynis vaikus. Nepaisant to, kad vaikai auga anglakalbėje aplinkoje, Elvyra dėjo visas pastangas, kad jie neprarastų savo šaknų. Visi jos vaikai lanko lietuvių mokyklėlę, kurioje mokosi ne tik protėvių kalbos, bet ir susipažįsta su Lietuvos istorija bei tradicijomis.
+Elvyros, Silvos dukros, kelias susiklostė kiek kitaip. Jos vaikystė ir paauglystė dar prabėgo Lietuvoje, bet vos tik ji baigė dvylika klasių ir sulaukė aštuoniolikos, susikrovė daiktus ir išvažiavo pas mamą į Didžiąją Britaniją. Ten ji pasiliko ir gyvena iki šiol.
 
-Šeimos ryšys su lietuvybe nesibaigia tik pamokomis. Kiekvienas sekmadienis Elvyros šeimoje turi savo ritualą – jie lankosi vietinėje, lietuvių įkurtoje bažnyčioje. Ši erdvė jiems atstoja kur kas daugiau nei vien maldos namus; tai pagrindinis miestelio lietuvių bendruomenės traukos centras. Čia Elvyra aktyviai bendrauja su kitais tautiečiais, dalijasi patirtimi ir padeda kurti savotišką „mažąją Lietuvą“ toli nuo tikrosios tėvynės. Jos gyvenimas rodo, kad emigracija nereiškia tapatybės praradimo – atvirkščiai, išvykus ji gali būti puoselėjama dar stipriau ir sąmoningiau.` },
+Nors Elvyra visiškai prisitaikė prie gyvenimo užsienyje, mane labiausiai nustebino tai, kaip stipriai ji palaiko lietuvybę. Ji turi didžiulę šeimą – augina net septynis vaikus. Ir nors jie visi auga britiškoje aplinkoje, Elvyra deda visas pastangas, kad jie nepamirštų savo šaknų. Visi jos vaikai lanko lietuvių mokyklėlę, kur mokosi kalbos ir tradicijų.
+
+Negana to, kiekvienas sekmadienis jų šeimoje turi aiškią tradiciją: jie važiuoja į vietinę, pačių lietuvių įkurtą bažnyčią. Tai nėra vien maldos namai, o tikras vietos lietuvių bendruomenės centras. Čia visi susitinka, bendrauja ir palaiko ryšius. Elvyros pavyzdys puikiai rodo, kad net ir išvykus iš Lietuvos, ją galima išsaugoti ir kurti savo namuose.` },
     { id: 11, name: "Tarvydas", parentId: 9, status: "migrated", level: 0, about: "Stefos sūnus." },
 
     // --- Lygis 1 ---
     { id: 2, name: "Gineta", parentId: 1, status: "alive", about: "Mano mama.", level: 1, spouseId: 3 },
     { id: 3, name: "Arūnas", parentId: 1, status: "alive", about: "Mano tėtis.", level: 1, spouseId: 2 },
-    // Silvos ilga istorija
+    // Silvos atnaujinta istorija
     {
-        id: 8, name: "Silva", parentId: 6, status: "migrated", level: 1, about: `Silvos gyvenimas – tai tipiška, bet tuo pat metu labai unikali motinos pasiaukojimo istorija. Didžiąją dalį savo jaunystės ir brandos metų praleidusi Lietuvoje, ji čia sukūrė šeimą ir susilaukė dukros Elvyros. Silvai visada buvo svarbu užtikrinti savo šeimai saugumą ir stabilumą, tačiau istorinės aplinkybės padiktavo savus iššūkius.
+        id: 8, name: "Silva", parentId: 6, status: "migrated", level: 1, about: `Silvos kelias: sunkus sprendimas dėl šeimos
 
-1990 m. Lietuvai ir visiems jos žmonėms tapo didžiulių permainų laiku. Nors nepriklausomybės atkūrimas atnešė neapsakomą dvasinį pakylėjimą ir laisvės viltį, kasdienybė smogė visu aštrumu. Sugriuvus senajai ekonominei sistemai, šalis susidūrė su didžiuliu stygiumi, infliacija ir neapibrėžtumu. Silvai, kaip ir daugeliui to meto žmonių, tapo be galo sunku ne tik užsidirbti pakankamai pinigų patogiam gyvenimui, bet ir užtikrinti elementarius buities poreikius. Matydama, kad atkurtoje valstybėje dar ilgai teks laukti ekonominio stabilumo, moteris priėmė drąsų ir sunkų sprendimą – palikti savo gimtinę ir ieškoti geresnio gyvenimo svetur.
+Silvos istorija prasideda Lietuvoje, kur ji praleido didžiąją dalį savo gyvenimo ir užaugino dukrą Elvyrą. Tačiau viską pakeitė 1990-ieji. Nors nepriklausomybės atkūrimas atnešė daug džiaugsmo, kasdienybė buvo visai kitokia. Pasikeitus sistemai, atsirado didžiulis trūkumas ir neapibrėžtumas, todėl pasidarė tiesiog nebeįmanoma patogiai gyventi ar normaliai užsidirbti. Matydama, kad greito ekonominio pagerėjimo nebus, Silva priėmė labai sunkų sprendimą – palikti Lietuvą ir išvykti į Didžiąją Britaniją.
 
-Emigracija į Didžiąją Britaniją nebuvo lengvas pabėgimas; tai buvo kelionė į visišką nežinomybę, siekiant sukurti tvirtesnį finansinį pagrindą, kad jos šeima, o ypač dukra, neturėtų skursti. Silva tapo savotiška savo giminės „pioniere“, nutiesusia kelią į naują pasaulį, kuriame sunkiu darbu reikėjo išsikovoti teisę į orų ir patogų gyvenimą.` },
+Tai nebuvo kažkoks lengvas nuotykis. Silva išvažiavo į visišką nežinomybę vien tam, kad sukurtų tvirtesnį finansinį pagrindą ir užtikrintų, jog jos dukra neturėtų vargti. Galima sakyti, kad ji buvo pirmoji mūsų giminėje, pasiryžusi tokiam žingsniui ir sunkiu darbu nutiesusi kelią geresniam gyvenimui.` },
     { id: 9, name: "Stefa", parentId: 6, status: "migrated", level: 1, about: "Nijolės sesuo." },
-    // Pakeistas parentId į 17 (Feliksas), kad išstumtume į kraštą
     { id: 18, name: "Virginija", parentId: 17, status: "alive", level: 1, about: "Arūno sesuo." },
 
     // --- Lygis 2 ---
