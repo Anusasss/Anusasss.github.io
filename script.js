@@ -219,8 +219,30 @@ function openModal(personData) {
     modal.classList.add('active');
 }
 
-function closeModal() { document.getElementById('info-modal').classList.remove('active'); }
-window.onclick = function (event) {
-    const modal = document.getElementById('info-modal');
-    if (event.target === modal) closeModal();
+// ==========================================
+// 4. INTRO STORY MODAL LOGIC
+// ==========================================
+function openIntroModal() {
+    document.getElementById('intro-modal').classList.add('active');
 }
+
+function closeIntroModal() {
+    document.getElementById('intro-modal').classList.remove('active');
+}
+
+// Close modals if user clicks the dark background outside the box
+window.onclick = function (event) {
+    const infoModal = document.getElementById('info-modal');
+    const introModal = document.getElementById('intro-modal');
+    if (event.target === infoModal) closeModal();
+    if (event.target === introModal) closeIntroModal();
+}
+
+// Automatically open the Intro Modal when the website loads
+window.onload = function () {
+    // A 1.2 second delay allows the user to see the tree start drawing 
+    // before the story gracefully fades in over the screen.
+    setTimeout(() => {
+        openIntroModal();
+    }, 1200);
+};

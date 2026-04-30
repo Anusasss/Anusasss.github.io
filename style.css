@@ -181,3 +181,62 @@ h2 {
     background: var(--neon-purple);
     border-radius: 10px;
 }
+
+/* --- Story Button --- */
+#story-btn {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    z-index: 50;
+    /* Keeps it above the canvas */
+    background: rgba(11, 12, 16, 0.8);
+    border: 1px solid var(--neon-purple);
+    color: var(--text-main);
+    padding: 12px 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.2);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+#story-btn:hover {
+    background: var(--neon-purple);
+    color: #fff;
+    box-shadow: 0 0 25px var(--neon-purple);
+    transform: translateY(-2px);
+}
+
+/* --- Intro Modal Specifics --- */
+.intro-content {
+    width: 700px;
+    /* Make it slightly wider for the long story */
+    border-top: 2px solid var(--neon-purple);
+}
+
+#intro-text {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 15px;
+    line-height: 1.6;
+    text-align: justify;
+    font-size: 16px;
+}
+
+#intro-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+#intro-text::-webkit-scrollbar-track {
+    background: rgba(176, 38, 255, 0.05);
+    border-radius: 10px;
+}
+
+#intro-text::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 10px;
+}
