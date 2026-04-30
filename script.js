@@ -197,51 +197,73 @@ function openModal(personData) {
     const modal = document.getElementById('info-modal');
     const badge = document.getElementById('modal-status-badge');
 
+    // Populate text
     document.getElementById('modal-name').innerText = personData.name;
-    document.getElementById('modal-about').innerText = personData.about;
-    badge.innerText = personData.status;
 
-    // Dynamically color the badge and modal top border
-    const contentBox = document.querySelector('.modal-content');
+    // Fallback text just in case someone doesn't have an 'about' section written yet
+    document.getElementById('modal-about').innerText = personData.about || "Informacija ruošiama...";
+
+    // Translate the status for the badge display
+    if (personData.status === 'alive') badge.innerText = "Gyvas";
+    if (personData.status === 'migrated') badge.innerText = "Emigravęs";
+    if (personData.status === 'dead') badge.innerText = "Miręs";
+
+    // Dynamically color the badge with minimalist pastel colors
     if (personData.status === 'alive') {
-        badge.style.backgroundColor = 'var(--neon-green)'; badge.style.color = '#000';
-        contentBox.style.borderTopColor = 'var(--neon-green)';
+        badge.style.backgroundColor = 'rgba(52, 211, 153, 0.15)';
+        badge.style.color = 'var(--accent-alive)';
+        badge.style.border = '1px solid var(--accent-alive)';
     }
     if (personData.status === 'migrated') {
-        badge.style.backgroundColor = 'var(--neon-purple)'; badge.style.color = '#fff';
-        contentBox.style.borderTopColor = 'var(--neon-purple)';
+        badge.style.backgroundColor = 'rgba(129, 140, 248, 0.15)';
+        badge.style.color = 'var(--accent-migrated)';
+        badge.style.border = '1px solid var(--accent-migrated)';
     }
     if (personData.status === 'dead') {
-        badge.style.backgroundColor = 'var(--neon-grey)'; badge.style.color = '#fff';
-        contentBox.style.borderTopColor = 'var(--neon-grey)';
+        badge.style.backgroundColor = 'rgba(100, 116, 139, 0.15)';
+        badge.style.color = 'var(--accent-dead)';
+        badge.style.border = '1px solid var(--accent-dead)';
     }
 
+    // Trigger the CSS fade-in transition
     modal.classList.add('active');
 }
 
 // ==========================================
-// 4. INTRO STORY MODAL LOGIC
+// 4. MODAL CLOSING & INTRO LOGIC
 // ==========================================
+
+// Closes the individual person's info window
+function closeModal() {
+    document.getElementById('info-modal').classList.remove('active');
+}
+
+// Opens the main Giminės Istorija window
 function openIntroModal() {
     document.getElementById('intro-modal').classList.add('active');
 }
 
+// Closes the main Giminės Istorija window
 function closeIntroModal() {
     document.getElementById('intro-modal').classList.remove('active');
 }
 
-// Close modals if user clicks the dark background outside the box
+// Closes windows if the user clicks on the blurred background outside the box
 window.onclick = function (event) {
     const infoModal = document.getElementById('info-modal');
     const introModal = document.getElementById('intro-modal');
-    if (event.target === infoModal) closeModal();
-    if (event.target === introModal) closeIntroModal();
+
+    if (event.target === infoModal) {
+        closeModal();
+    }
+    if (event.target === introModal) {
+        closeIntroModal();
+    }
 }
 
 // Automatically open the Intro Modal when the website loads
 window.onload = function () {
-    // A 1.2 second delay allows the user to see the tree start drawing 
-    // before the story gracefully fades in over the screen.
+    // 1.2 second delay allows the tree animation to play first
     setTimeout(() => {
         openIntroModal();
     }, 1200);
