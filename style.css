@@ -156,3 +156,28 @@ h2 {
     margin-bottom: 20px;
     font-weight: 700;
 }
+
+/* --- Scrollable Modal Text for Long Stories --- */
+#modal-about {
+    max-height: 55vh;
+    /* Prevents the box from getting taller than the screen */
+    overflow-y: auto;
+    padding-right: 15px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Custom Futuristic Scrollbar */
+#modal-about::-webkit-scrollbar {
+    width: 6px;
+}
+
+#modal-about::-webkit-scrollbar-track {
+    background: rgba(0, 255, 204, 0.05);
+    border-radius: 10px;
+}
+
+#modal-about::-webkit-scrollbar-thumb {
+    background: var(--neon-purple);
+    border-radius: 10px;
+}
