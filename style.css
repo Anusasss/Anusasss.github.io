@@ -1,0 +1,158 @@
+/* --- Global Futuristic Theme --- */
+:root {
+    --bg-color: #0b0c10;
+    --text-main: #c5c6c7;
+    --line-color: #1f2833;
+    
+    /* Neon Status Colors */
+    --neon-green: #00ffcc;
+    --neon-purple: #b026ff;
+    --neon-grey: #4a5568;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Prevent scrollbars, we will center the tree */
+}
+
+/* --- Tree Container --- */
+#tree-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Lines stay behind nodes */
+}
+
+/* Connectors (Lines) */
+.link {
+    fill: none;
+    stroke: var(--line-color);
+    stroke-width: 3px;
+    opacity: 0.6;
+}
+
+/* --- Interactive Blobs (Nodes) --- */
+.blob {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Center the div on its coordinates */
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Name label under the blob */
+.blob-label {
+    position: absolute;
+    top: 50px;
+    font-size: 12px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Dynamic Styling based on Status */
+.blob[data-status="alive"] { 
+    background: var(--neon-green); 
+    box-shadow: 0 0 15px var(--neon-green), inset 0 0 10px rgba(255,255,255,0.5); 
+}
+.blob[data-status="migrated"] { 
+    background: var(--neon-purple); 
+    box-shadow: 0 0 15px var(--neon-purple), inset 0 0 10px rgba(255,255,255,0.5); 
+}
+.blob[data-status="dead"] { 
+    background: var(--neon-grey); 
+    box-shadow: 0 0 10px var(--neon-grey); 
+}
+
+/* Hover Effects */
+.blob:hover { 
+    transform: translate(-50%, -50%) scale(1.3); 
+    filter: brightness(1.3); 
+    z-index: 10;
+}
+
+/* --- Modal Styling (Glassmorphism) --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(11, 12, 16, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    
+    /* Smooth Transition Setup */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Active state triggered by JS */
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: rgba(31, 40, 51, 0.9);
+    border: 1px solid var(--neon-green);
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 24px;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover { color: var(--neon-green); }
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
