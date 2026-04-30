@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Family Tree</title>
+    <title>Giminės Medis</title>
 
-    <!-- Modern Futuristic Fonts -->
+    <!-- Premium Minimalist Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -19,15 +18,16 @@
 
 <body>
 
-    <!-- New Top Right Button -->
+    <!-- Sleek Pill Button -->
     <button id="story-btn" onclick="openIntroModal()">Giminės Istorija</button>
 
-    <!-- New Intro Story Modal -->
+    <div id="tree-container"></div>
+
+    <!-- Intro Story Modal -->
     <div id="intro-modal" class="modal">
         <div class="modal-content intro-content">
             <span class="close-btn" onclick="closeIntroModal()">&times;</span>
-            <h2 style="color: var(--neon-purple); font-size: 22px; line-height: 1.3;">Giliai įleistos šaknys ir
-                pavieniai migracijos daigai</h2>
+            <h2>Giliai įleistos šaknys ir pavieniai migracijos daigai</h2>
 
             <div id="intro-text">
                 <p>Nors giminės medžio šakos gali driektis per daugybę kartų, mano šeimos istorija pasižymi išskirtiniu
@@ -35,14 +35,11 @@
                     vyriausius, vis dar gyvus giminaičius, atradau vieną neginčijamą faktą – beveik visas mūsų giminės
                     medis susideda iš žmonių, visą gyvenimą praleidusių Lietuvoje. Iš kartos į kartą buvo perduodamos
                     tradicijos, o pasakojimų apie išvykimą į tolimus kraštus mūsų šeimos atmintyje tiesiog nėra.
-                    Vyresnieji net nebuvo girdėję apie jokias ankstesnes migracijos bangas mūsų giminėje – mes esame
-                    tarsi ąžuolas, šimtmečius giliai įleidęs šaknis savo krašte.</p>
-                <br>
+                    Vyresnieji net nebuvo girdėję apie jokias ankstesnes migracijos bangas mūsų giminėje.</p>
                 <p>Visgi, net ir pačiame tvirčiausiame medyje atsiranda šakų, kurios pasistiebia kita kryptimi. Šiame
                     absoliutaus sėslumo fone išsiskiria vienintelė, bet labai ryški išimtis – dviejų moterų, Silvos ir
                     Stefos, bei jų vaikų likimai. Būtent šios dvi šakos tapo mūsų giminės migracijos istorijos
                     pradininkėmis.</p>
-                <br>
                 <p>Kaip jau aprašiau šiame darbe, Silvos ir jos dukros Elvyros istorija yra išsami ir gyva – mes
                     tiksliai žinome apie jų išvykimą į Didžiąją Britaniją, patirtus iššūkius ir ten nuostabiai
                     puoselėjamą lietuvybę. Tačiau giminės tyrimai kartais susiduria su laiko iššūkiais. Antroji
@@ -55,14 +52,14 @@
         </div>
     </div>
 
-    <div id="tree-container"></div>
-
-    <!-- Upgraded Glassmorphism Modal -->
+    <!-- Person Info Modal -->
     <div id="info-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 id="modal-name">Name</h2>
-            <div id="modal-status-badge" class="status-badge">Status</div>
+            <div class="modal-header">
+                <h2 id="modal-name">Name</h2>
+                <div id="modal-status-badge" class="status-badge">Status</div>
+            </div>
             <p id="modal-about">About text goes here...</p>
         </div>
     </div>
